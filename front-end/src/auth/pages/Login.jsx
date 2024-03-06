@@ -3,34 +3,10 @@ import { Input, Checkbox, Button } from 'react-daisyui';
 
 import { AuthLayout } from '../layout/AuthLayout';
 
-export const Register = () => {
+export const Login = () => {
     return (
         <AuthLayout>
             <form className='grid grid-cols-6 gap-6 mt-8'>
-                <div className='col-span-6 sm:col-span-3'>
-                    <label
-                        htmlFor='firstName'
-                        className='block text-sm font-medium text-gray-700'>
-                        Nombre
-                    </label>
-                    <Input
-                        type='text'
-                        name='firstName'
-                        className='mt-2 w-full'
-                        placeholder='Ingrese tu nombre' />
-                </div>
-                <div className='col-span-6 sm:col-span-3'>
-                    <label
-                        htmlFor='lastName'
-                        className='block text-sm font-medium text-gray-700'>
-                        Apellido
-                    </label>
-                    <Input
-                        type='text'
-                        name='lastName'
-                        className='mt-2 w-full'
-                        placeholder='Ingrese tu apellido' />
-                </div>
                 <div className='col-span-6'>
                     <label
                         htmlFor='email'
@@ -43,7 +19,7 @@ export const Register = () => {
                         className='mt-2 w-full'
                         placeholder='Ingrese su correo electronico' />
                 </div>
-                <div className='col-span-6 sm:col-span-3'>
+                <div className='col-span-6'>
                     <label
                         htmlFor='password'
                         className='block text-sm font-medium text-gray-700'>
@@ -55,18 +31,6 @@ export const Register = () => {
                         className='mt-2 w-full'
                         placeholder='Ingrese su contraseña' />
                 </div>
-                <div className='col-span-6 sm:col-span-3'>
-                    <label
-                        htmlFor='confirmPassword'
-                        className='block text-sm font-medium text-gray-700'>
-                        Confirme Contraseña
-                    </label>
-                    <Input
-                        type='password'
-                        name='confirmPassword'
-                        className='mt-2 w-full'
-                        placeholder='Confirme su contraseña' />
-                </div>
                 <div className='col-span-6'>
                     <label
                         htmlFor='rememberMe'
@@ -75,7 +39,7 @@ export const Register = () => {
                             name='rememberMe'
                             color='neutral' />
                         <span className='text-sm text-gray-700'>
-                            Acepto los <a className='underline font-bold'>terminos y condiciones</a> como tambien las <a className='underline font-bold'>politicas de privacidad</a> de la Vega Techada
+                            Recuerdame
                         </span>
                     </label>
                 </div>
@@ -83,10 +47,10 @@ export const Register = () => {
                     <Button
                         color='neutral'
                         className='text-base w-full'>
-                        Registrarme
+                        Iniciar Sesion
                     </Button>
                     <p className='mt-4 text-sm sm:mt-0'>
-                        ¿Ya tienes una cuenta? <Link to='/auth/login' className='underline font-bold'>Inicia Sesion</Link>.
+                        ¿No tienes una cuenta? <Link to='/auth/register' className='underline font-bold'>Registrate</Link>.
                     </p>
                 </div>
             </form>
