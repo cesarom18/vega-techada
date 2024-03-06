@@ -1,5 +1,7 @@
+import { AppRouter } from './router/AppRouter';
+
 export const VegaTechadaApp = () => {
 	return (
-		<div>Vega Techada</div>
+		<AppRouter />
 	);
 };
