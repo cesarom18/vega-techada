@@ -1,13 +1,13 @@
 export const AuthLayout = ({ children }) => {
     return (
-        <section className='bg-white' >
+        <section className='bg-gray-50' >
             <div className='lg:grid lg:min-h-screen lg:grid-cols-12'>
                 <section className='bg-neutral relative flex items-end lg:col-span-5 lg:h-full xl:col-span-6 h-32'>
                     <div className='hidden lg:relative lg:block lg:p-12'>
-                        <h2 className='text-white text-2xl font-bold sm:text-3xl md:text-4xl mt-6 '>
+                        <h2 className='text-gray-50 text-2xl font-bold sm:text-3xl md:text-4xl mt-6 '>
                             Bienvenido al sitio oficial de la Vega Techada
                         </h2>
-                        <p className='leading-relaxed text-white mt-4'>
+                        <p className='leading-relaxed text-gray-50 mt-4'>
                             Ingresa dentro del sitio y visita tus locales favoritos del sitio, pudiendo realizar pedidos en cada uno de ellos para su posterior retiro.
                         </p>
                     </div>

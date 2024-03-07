@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Input, Checkbox, Button } from 'react-daisyui';
+import { Input, Checkbox, Button, Link as LinkTailwind } from 'react-daisyui';
 
 import { AuthLayout } from '../layout/AuthLayout';
 
@@ -38,19 +38,22 @@ export const Login = () => {
                         <Checkbox
                             name='rememberMe'
                             color='neutral' />
-                        <span className='text-sm text-gray-700'>
+                        <span className='text-sm text-gray-800'>
                             Recuerdame
                         </span>
                     </label>
                 </div>
                 <div className='col-span-6 flex flex-col items-center gap-4'>
                     <Button
-                        color='neutral'
-                        className='text-base w-full'>
+                        color='ghost'
+                        className='bg-gray-800 hover:bg-gray-700 text-gray-50 w-full'>
                         Iniciar Sesion
                     </Button>
                     <p className='mt-4 text-sm sm:mt-0'>
-                        ¿No tienes una cuenta? <Link to='/auth/register' className='underline font-bold'>Registrate</Link>.
+                        ¿No tienes una cuenta?
+                        <Link to='/auth/register'>
+                            <LinkTailwind className='font-bold'> Registrate</LinkTailwind>
+                        </Link>.
                     </p>
                 </div>
             </form>

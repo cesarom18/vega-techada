@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Input, Checkbox, Button } from 'react-daisyui';
+import { Input, Checkbox, Button, Link as LinkTailwind } from 'react-daisyui';
 
 import { AuthLayout } from '../layout/AuthLayout';
 
@@ -75,7 +75,7 @@ export const Register = () => {
                             name='rememberMe'
                             color='neutral' />
                         <span className='text-sm text-gray-700'>
-                            Acepto los <a className='underline font-bold'>terminos y condiciones</a> como tambien las <a className='underline font-bold'>politicas de privacidad</a> de la Vega Techada
+                            Acepto los <LinkTailwind className='font-bold'>terminos y condiciones</LinkTailwind> como tambien las <LinkTailwind className='font-bold'>politicas de privacidad</LinkTailwind> de la Vega Techada
                         </span>
                     </label>
                 </div>
@@ -86,7 +86,10 @@ export const Register = () => {
                         Registrarme
                     </Button>
                     <p className='mt-4 text-sm sm:mt-0'>
-                        ¿Ya tienes una cuenta? <Link to='/auth/login' className='underline font-bold'>Inicia Sesion</Link>.
+                        ¿Ya tienes una cuenta?
+                        <Link to='/auth/login'>
+                            <LinkTailwind className='font-bold'> Inicia Sesion</LinkTailwind>
+                        </Link>.
                     </p>
                 </div>
             </form>
