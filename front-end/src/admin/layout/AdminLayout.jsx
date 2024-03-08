@@ -14,7 +14,7 @@ export const AdminLayout = ({ children }) => {
 
     return (
         <div className='bg-gray-200 grid grid-cols-6'>
-            <div className={`col-span-1  fixed z-50 top-0 ${(sidebarVisible) ? '-left-0' : '-left-full'} lg:sticky self-start overflow-y-scroll transition-all w-full`}>
+            <div className={`col-span-1  fixed z-20 top-0 ${(sidebarVisible) ? '-left-0' : '-left-full'} lg:sticky self-start overflow-y-scroll transition-all w-full`}>
                 <Sidebar toggleSidebarVisible={toggleSidebarVisible} />
             </div>
             <div className='col-span-6 lg:col-span-5'>
@@ -25,7 +25,7 @@ export const AdminLayout = ({ children }) => {
             </div>
             <Button
                 color='ghost'
-                className='fixed bottom-5 right-5 lg:hidden bg-gray-800 hover:bg-gray-700 text-gray-50 text-2xl btn-circle'
+                className='fixed z-10 bottom-5 right-5 lg:hidden bg-gray-800 hover:bg-gray-700 text-gray-50 text-2xl btn-circle'
                 onClick={toggleSidebarVisible}>
                 <TbMenu2 />
             </Button>
