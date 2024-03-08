@@ -13,11 +13,11 @@ export const AdminLayout = ({ children }) => {
     }, []);
 
     return (
-        <div className='bg-gray-200 grid grid-cols-6 relative min-h-screen'>
-            <div className={`col-span-1 fixed z-10 top-0 ${(sidebarVisible) ? '-left-0' : '-left-full'} lg:static overflow-y-scroll transition-all w-full h-full`}>
+        <div className='bg-gray-200 grid grid-cols-6'>
+            <div className={`col-span-1  fixed z-50 top-0 ${(sidebarVisible) ? '-left-0' : '-left-full'} lg:sticky self-start overflow-y-scroll transition-all w-full`}>
                 <Sidebar toggleSidebarVisible={toggleSidebarVisible} />
             </div>
-            <div className='col-span-6 lg:col-span-5 relative'>
+            <div className='col-span-6 lg:col-span-5'>
                 <Header toggleSidebarVisible={toggleSidebarVisible} />
                 <main className='p-8 lg:p-12'>
                     {children}
@@ -25,7 +25,7 @@ export const AdminLayout = ({ children }) => {
             </div>
             <Button
                 color='ghost'
-                className='flex lg:hidden absolute bottom-5 right-5 bg-gray-800 hover:bg-gray-700 text-gray-50 text-2xl btn-circle '
+                className='fixed bottom-5 right-5 lg:hidden bg-gray-800 hover:bg-gray-700 text-gray-50 text-2xl btn-circle'
                 onClick={toggleSidebarVisible}>
                 <TbMenu2 />
             </Button>
