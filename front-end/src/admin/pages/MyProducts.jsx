@@ -1,23 +1,18 @@
-import { Alert, Breadcrumbs, Button, Card } from 'react-daisyui';
+import { Alert, Button, Card } from 'react-daisyui';
 import { TbInfoCircle, TbShoppingCart } from 'react-icons/tb';
 
 import { AdminLayout } from '../layout/AdminLayout';
-import { MyProductTable } from '../components/tables';
+import { MyProductTable } from '../components/table';
+import { BreadcrumbPage } from '../components/BreadcrumbPage';
 import { products } from '../data';
 
 export const MyProducts = () => {
     return (
         <AdminLayout>
             <div className='flex flex-col md:flex-row justify-between items-center mb-12'>
-                <Breadcrumbs className='text-xs lg:text-sm'>
-                    <Breadcrumbs.Item>
-                        Panel Administracion
-                    </Breadcrumbs.Item>
-                    <Breadcrumbs.Item>
-                        <TbShoppingCart className='mr-2' />
-                        Mis Productos
-                    </Breadcrumbs.Item>
-                </Breadcrumbs>
+                <BreadcrumbPage
+                    pageName='Mis Productos'
+                    pageIcon={<TbShoppingCart />} />
                 <Button
                     color='ghost'
                     size='md'
@@ -25,18 +20,16 @@ export const MyProducts = () => {
                     Registrar Producto
                 </Button>
             </div>
-            <div>
-                <Card className='bg-gray-50'>
-                    <Card.Body>
-                        <Card.Title className='mb-2'>Tabla De Productos</Card.Title>
-                        {
-                            (products.length !== 0)
-                                ? <MyProductTable products={products} />
-                                : <Alert icon={<TbInfoCircle className='text-xl' />}>No hay productos registrados</Alert>
-                        }
-                    </Card.Body>
-                </Card>
-            </div>
+            <Card className='bg-gray-50'>
+                <Card.Body>
+                    <Card.Title className='mb-2'>Tabla De Productos</Card.Title>
+                    {
+                        (products.length !== 0)
+                            ? <MyProductTable products={products} />
+                            : <Alert icon={<TbInfoCircle className='text-xl' />}>No hay productos registrados</Alert>
+                    }
+                </Card.Body>
+            </Card>
         </AdminLayout>
     );
 };
