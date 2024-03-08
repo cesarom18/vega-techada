@@ -5,7 +5,7 @@ import { TbLogout2 } from 'react-icons/tb';
 
 export const Header = () => {
     return (
-        <header className='bg-gray-50 flex justify-between items-center shadow-sm px-6 py-4'>
+        <header className='bg-gray-50 flex justify-between items-center shadow-sm pr-12 pl-8 py-4'>
             <div>
                 <HeaderLastOrders />
             </div>
