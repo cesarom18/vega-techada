@@ -1,11 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { AuthRoutes } from './routes';
+import { AdminRoutes, AuthRoutes } from './routes';
 
 export const AppRouter = () => {
     return (
         <Routes>
             <Route path='/auth/*' element={<AuthRoutes />} />
+            <Route path='/admin/*' element={<AdminRoutes />} />
         </Routes>
     );
 };

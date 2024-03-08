@@ -12,7 +12,11 @@ export const HeaderLastOrders = () => {
             <Dropdown.Toggle
                 button={false}
                 className='btn btn-circle btn-ghost hover:bg-gray-800 hover:text-gray-50 text-2xl'>
-                {(dataLength !== 0) ? < TbBellRinging /> : <TbBell />}
+                {
+                    (dataLength !== 0)
+                        ? < TbBellRinging />
+                        : <TbBell />
+                }
             </Dropdown.Toggle>
             <Dropdown.Menu className='z-20 mt-10 w-72 max-h-[500px] '>
                 <div className='flex flex-col overflow-y-scroll'>
