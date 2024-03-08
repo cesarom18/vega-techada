@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
-import { Checkbox, Table, Button, Modal } from 'react-daisyui';
-import { TbEye, TbTrash } from 'react-icons/tb'
+import { Table, Button, Modal } from 'react-daisyui';
+import { TbEye, TbTrash } from 'react-icons/tb';
 
 export const MyProductTableItem = ({ id, name, offerType, category, availability, price }) => {
     const modalRef = useRef(null);
@@ -16,7 +16,6 @@ export const MyProductTableItem = ({ id, name, offerType, category, availability
     return (
         <>
             <Table.Row>
-                <Checkbox color='neutral' />
                 <div>{id}</div>
                 <div>{name}</div>
                 <div>{offerType}</div>

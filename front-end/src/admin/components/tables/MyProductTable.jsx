@@ -1,14 +1,17 @@
-import { Checkbox, Table } from 'react-daisyui';
+import { Table } from 'react-daisyui';
 
-import { products } from '../../data';
 import { usePaginatorSearchBar } from '../../../hooks';
-import { MyProductTableItem } from './MyProductTableItem';
 import { PaginatorSearchBar } from '../../../components';
+import { MyProductTableItem } from './MyProductTableItem';
+//import { products } from '../../data';
+import { useEffect, useState } from 'react';
 
-const dataLegth = products.length;
+export const MyProductTable = ({ products }) => {
+    const { search, currentPage, setElements, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar();
 
-export const MyProductTable = () => {
-    const { search, currentPage, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar(products);
+    useEffect(() => {
+        setElements(products)
+    }, [])
 
     return (
         <PaginatorSearchBar
@@ -22,7 +25,6 @@ export const MyProductTable = () => {
             <div className='overflow-x-auto'>
                 <Table className='mb-4'>
                     <Table.Head>
-                        <Checkbox color='neutral' />
                         <span>ID</span>
                         <span>Nombre</span>
                         <span>Tipo Oferta</span>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-export const usePaginatorSearchBar = (elements) => {
+export const usePaginatorSearchBar = () => {
+    const [elements, setElements] = useState([]);
     const [search, setSearch] = useState('');
     const [currentPage, setCurrentPage] = useState(0);
 
@@ -33,6 +34,7 @@ export const usePaginatorSearchBar = (elements) => {
     return {
         search,
         currentPage,
+        setElements,
         onSearchBarChange,
         onFilteredElements,
         onPrevPage,

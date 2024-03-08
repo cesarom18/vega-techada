@@ -1,8 +1,8 @@
 import { Divider, Dropdown, Button, Alert } from 'react-daisyui';
 import { TbBell, TbInfoCircle, TbBellRinging } from 'react-icons/tb';
 
-import { lastOrders } from '../../data';
 import { HeaderLastOrdersList } from './';
+import { lastOrders } from '../../data';
 
 const dataLength = lastOrders.length;
 

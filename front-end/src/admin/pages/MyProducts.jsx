@@ -1,8 +1,9 @@
-import { Breadcrumbs, Button, Card } from 'react-daisyui';
-import { TbShoppingCart } from 'react-icons/tb';
+import { Alert, Breadcrumbs, Button, Card } from 'react-daisyui';
+import { TbInfoCircle, TbShoppingCart } from 'react-icons/tb';
 
 import { AdminLayout } from '../layout/AdminLayout';
 import { MyProductTable } from '../components/tables';
+import { products } from '../data';
 
 export const MyProducts = () => {
     return (
@@ -28,7 +29,11 @@ export const MyProducts = () => {
                 <Card className='bg-gray-50'>
                     <Card.Body>
                         <Card.Title className='mb-2'>Tabla De Productos</Card.Title>
-                        <MyProductTable />
+                        {
+                            (products.length !== 0)
+                                ? <MyProductTable products={products} />
+                                : <Alert icon={<TbInfoCircle className='text-xl' />}>No hay productos registrados</Alert>
+                        }
                     </Card.Body>
                 </Card>
             </div>
