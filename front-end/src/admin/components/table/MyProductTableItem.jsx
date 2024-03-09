@@ -1,4 +1,6 @@
 import { useCallback, useRef } from 'react';
+import { Link } from 'react-router-dom';
+
 import { Table, Button, Modal } from 'react-daisyui';
 import { TbEye, TbTrash } from 'react-icons/tb';
 
@@ -23,13 +25,12 @@ export const MyProductTableItem = ({ id, name, offerType, category, availability
                 <div>{availability}</div>
                 <div>${price}</div>
                 <div>
-                    <Button
-                        size='md'
-                        color='ghost'
-                        className='bg-gray-800 hover:bg-gray-700 text-gray-50'>
+                    <Link
+                        to={`/admin/product-detail/${id}`}
+                        className='btn btn-md btn-ghost bg-gray-800 hover:bg-gray-700 text-gray-50'>
                         <TbEye className='hidden lg:block' />
                         Ver
-                    </Button>
+                    </Link>
                 </div>
                 <div>
                     <Button

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Menu, Divider, Button } from 'react-daisyui';
 import { TbLayoutDashboard, TbShoppingCart, TbShoppingCartPlus, TbReceipt, TbSettings, TbHelpCircle, TbX } from 'react-icons/tb';
 
@@ -24,38 +25,38 @@ export const Sidebar = ({ toggleSidebarVisible }) => {
                 <Menu className='text-gray-800 p-0'>
                     <Menu.Title className='text-xs text-gray-600 uppercase font-semibold tracking-[2px] mb-3 px-0'>Analisis</Menu.Title>
                     <Menu.Item>
-                        <a
-                            href='#'
+                        <Link
+                            to='/admin/dashboard'
                             className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
                             <TbLayoutDashboard className='text-xl' />
                             <span>Dashboard</span>
-                        </a>
+                        </Link>
                     </Menu.Item>
                     <Menu.Title className='text-xs text-gray-600 uppercase font-semibold tracking-[2px] my-3 px-0'>Productos</Menu.Title>
                     <Menu.Item>
-                        <a
-                            href='#'
+                        <Link
+                            to='/admin/my-products'
                             className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
                             <TbShoppingCart className='text-xl' />
                             <span>Mis Productos</span>
-                        </a>
+                        </Link>
                     </Menu.Item>
                     <Menu.Item>
-                        <a
-                            href='#'
+                        <Link
+                            to='/admin/register-product'
                             className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
                             <TbShoppingCartPlus className='text-xl' />
                             <span>Registrar Producto</span>
-                        </a>
+                        </Link>
                     </Menu.Item>
                     <Menu.Title className='text-xs text-gray-600 uppercase font-semibold tracking-[2px] my-3 px-0'>Pedidos</Menu.Title>
                     <Menu.Item>
-                        <a
-                            href='#'
+                        <Link
+                            to='/admin/my-orders'
                             className='flex items-center gap-4  hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
                             <TbReceipt className='text-xl' />
                             <span>Mis Pedidos</span>
-                        </a>
+                        </Link>
                     </Menu.Item>
                 </Menu>
             </div>

@@ -1,4 +1,5 @@
-import { Button, Card } from 'react-daisyui'
+import { Link } from 'react-router-dom'
+import { Card } from 'react-daisyui';
 import { TbShoppingCartPlus } from 'react-icons/tb';
 
 import { AdminLayout } from '../layout/AdminLayout';
@@ -12,12 +13,11 @@ export const RegisterProduct = () => {
                 <BreadcrumbPage
                     pageName='Registrar Producto'
                     pageIcon={<TbShoppingCartPlus />} />
-                <Button
-                    color='ghost'
-                    size='md'
-                    className='bg-gray-800 hover:bg-gray-700 text-gray-50 w-full md:w-40 mt-4 lg:mt-0'>
-                    Volver
-                </Button>
+                <Link
+                    to='/admin/my-products'
+                    className='btn btn-md btn-ghost bg-gray-800 hover:bg-gray-700 text-gray-50 w-full md:w-40 mt-4 lg:mt-0'>
+                    Volver A Mis Productos
+                </Link>
             </div>
             <Card className='bg-gray-50'>
                 <Card.Body>
