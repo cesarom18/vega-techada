@@ -2,15 +2,15 @@ import { Table } from 'react-daisyui';
 
 import { usePaginatorSearchBar } from '../../../hooks';
 import { PaginatorSearchBar } from '../../../components';
-import { MyProductTableItem } from './MyProductTableItem';
-import { useEffect, useState } from 'react';
+import { MyOrderTableItem } from './MyOrderTableItem';
+import { useEffect } from 'react';
 
-export const MyProductTable = ({ products }) => {
+export const MyOrderTable = ({ orders }) => {
     const { search, currentPage, setElements, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar();
 
     useEffect(() => {
-        setElements(products)
-    }, [])
+        setElements(orders);
+    }, []);
 
     return (
         <PaginatorSearchBar
@@ -20,21 +20,21 @@ export const MyProductTable = ({ products }) => {
             onFilteredElements={onFilteredElements}
             onPrevPage={onPrevPage}
             onNextPage={onNextPage}
-            placeholder='Ingresa el nombre del producto que desees buscar'>
+            placeholder='Ingresa el nombre de quien realizo el pedido'>
             <div className='overflow-x-auto'>
                 <Table className='mb-4'>
                     <Table.Head>
                         <span>ID</span>
-                        <span>Nombre</span>
-                        <span>Tipo Oferta</span>
-                        <span>Categoria</span>
-                        <span>Disponibilidad</span>
-                        <span>Precio</span>
+                        <span>Solicitante</span>
+                        <span>Estado</span>
+                        <span>Fecha De Solicitud</span>
+                        <span>Cantidad De Productos</span>
+                        <span>Total</span>
                     </Table.Head>
                     <Table.Body>
                         {
                             onFilteredElements().map((e) => (
-                                <MyProductTableItem
+                                <MyOrderTableItem
                                     key={e.id}
                                     {...e} />
                             ))
@@ -43,5 +43,5 @@ export const MyProductTable = ({ products }) => {
                 </Table>
             </div>
         </PaginatorSearchBar>
-    );
-};
+    )
+}

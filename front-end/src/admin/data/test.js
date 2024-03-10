@@ -131,3 +131,86 @@ export const products = [
         "price": "385.00"
     }
 ];
+
+export const orders = [
+    {
+        "id": 18,
+        "name": "Katelin",
+        "state": 4,
+        "date": new Date(2024, 2, 8),
+        "amountProducts": 5,
+        "total": "915.00"
+    },
+    {
+        "id": 52,
+        "name": "Elenora",
+        "state": 6,
+        "date": new Date(2024, 2, 8),
+        "amountProducts": 3,
+        "total": "866.00"
+    },
+    {
+        "id": 66,
+        "name": "Macy",
+        "state": 1,
+        "date": new Date(2024, 2, 8),
+        "amountProducts": 2,
+        "total": "953.00"
+    },
+    {
+        "id": 57,
+        "name": "Maxwell",
+        "state": 0,
+        "date": new Date(2024, 2, 8),
+        "amountProducts": 5,
+        "total": "873.00"
+    },
+    {
+        "id": 10,
+        "name": "Wilton",
+        "state": 6,
+        "date": new Date(2024, 2, 8),
+        "amountProducts": 10,
+        "total": "632.00"
+    },
+    {
+        "id": 1,
+        "name": "Aiden",
+        "state": 1,
+        "date": new Date(2024, 2, 10),
+        "amountProducts": 4,
+        "total": "518.00"
+    },
+    {
+        "id": 83,
+        "name": "Sherman",
+        "state": 6,
+        "date": new Date(2024, 2, 10),
+        "amountProducts": 6,
+        "total": "875.00"
+    },
+    {
+        "id": 43,
+        "name": "Oceane",
+        "state": 2,
+        "date": new Date(2024, 2, 10),
+        "amountProducts": 2,
+        "total": "233.00"
+    },
+    {
+        "id": 9,
+        "name": "Franco",
+        "state": 3,
+        "date": new Date(2024, 2, 10),
+        "amountProducts": 9,
+        "total": "456.00"
+    },
+    {
+        "id": 92,
+        "name": "Raleigh",
+        "state": 0,
+        "date": new Date(2024, 2, 10),
+        "amountProducts": 5,
+        "total": "686.00"
+    }
+];
