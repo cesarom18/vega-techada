@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { MyProducts, RegisterProduct, ProductDetail, MyOrders } from '../../admin/pages';
+import { MyProducts, RegisterProduct, ProductDetail, MyOrders, OrderDetail } from '../../admin/pages';
 
 export const AdminRoutes = () => {
     return (
@@ -9,6 +9,7 @@ export const AdminRoutes = () => {
             <Route path='/register-product' element={<RegisterProduct />} />
             <Route path='/product-detail/:productId' element={<ProductDetail />} />
             <Route path='/my-orders' element={<MyOrders />} />
+            <Route path='/order-detail/:orderId' element={<OrderDetail />} />
         </Routes>
     );
 };
