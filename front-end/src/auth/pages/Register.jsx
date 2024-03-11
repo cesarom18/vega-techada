@@ -5,12 +5,12 @@ import { AuthLayout } from '../layout/AuthLayout';
 
 export const Register = () => {
     return (
-        <AuthLayout>
-            <form className='grid grid-cols-6 gap-6 mt-8'>
+        <AuthLayout title='Crea tu cuenta'>
+            <form className='grid grid-cols-6 gap-6 mt-r'>
                 <div className='col-span-6 sm:col-span-3'>
                     <label
                         htmlFor='firstName'
-                        className='block text-sm font-medium text-gray-700'>
+                        className='label block text-sm font-medium text-gray-700'>
                         Nombre
                     </label>
                     <Input
@@ -22,7 +22,7 @@ export const Register = () => {
                 <div className='col-span-6 sm:col-span-3'>
                     <label
                         htmlFor='lastName'
-                        className='block text-sm font-medium text-gray-700'>
+                        className='label block text-sm font-medium text-gray-700'>
                         Apellido
                     </label>
                     <Input
@@ -42,6 +42,18 @@ export const Register = () => {
                         name='email'
                         className='mt-2 w-full'
                         placeholder='Ingrese su correo electronico' />
+                </div>
+                <div className='col-span-6'>
+                    <label
+                        htmlFor='rut'
+                        className='block text-sm font-medium text-gray-700'>
+                        RUT
+                    </label>
+                    <Input
+                        type='text'
+                        name='rut'
+                        className='mt-2 w-full'
+                        placeholder='Ingrese su RUT' />
                 </div>
                 <div className='col-span-6 sm:col-span-3'>
                     <label
@@ -83,7 +95,7 @@ export const Register = () => {
                     <Button
                         color='neutral'
                         className='text-base w-full'>
-                        Registrarme
+                        Crear Cuenta
                     </Button>
                     <p className='mt-4 text-sm sm:mt-0'>
                         ¿Ya tienes una cuenta?

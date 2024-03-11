@@ -5,12 +5,12 @@ import { AuthLayout } from '../layout/AuthLayout';
 
 export const Login = () => {
     return (
-        <AuthLayout>
-            <form className='grid grid-cols-6 gap-6 mt-8'>
+        <AuthLayout title='Inicia Sesion'>
+            <form className='grid grid-cols-6 gap-6 mt-4'>
                 <div className='col-span-6'>
                     <label
                         htmlFor='email'
-                        className='block text-sm font-medium text-gray-700'>
+                        className='label block text-sm font-medium text-gray-700'>
                         Correo Electronico
                     </label>
                     <Input
@@ -22,7 +22,7 @@ export const Login = () => {
                 <div className='col-span-6'>
                     <label
                         htmlFor='password'
-                        className='block text-sm font-medium text-gray-700'>
+                        className='label block text-sm font-medium text-gray-700'>
                         Contraseña
                     </label>
                     <Input
@@ -34,11 +34,11 @@ export const Login = () => {
                 <div className='col-span-6'>
                     <label
                         htmlFor='rememberMe'
-                        className='flex items-center gap-4'>
+                        className='label flex items-center justify-start gap-4'>
                         <Checkbox
                             name='rememberMe'
                             color='neutral' />
-                        <span className='text-sm text-gray-800'>
+                        <span className='text-sm text-gray-700'>
                             Recuerdame
                         </span>
                     </label>
@@ -49,10 +49,10 @@ export const Login = () => {
                         className='bg-gray-800 hover:bg-gray-700 text-gray-50 w-full'>
                         Iniciar Sesion
                     </Button>
-                    <p className='mt-4 text-sm sm:mt-0'>
+                    <p className='mt-4 text-sm text-gray-700 sm:mt-0'>
                         ¿No tienes una cuenta?
                         <Link to='/auth/register'>
-                            <LinkTailwind className='font-bold'> Registrate</LinkTailwind>
+                            <LinkTailwind className='font-bold'> Crea una con nosotros</LinkTailwind>
                         </Link>.
                     </p>
                 </div>
