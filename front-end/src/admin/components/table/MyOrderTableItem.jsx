@@ -2,14 +2,16 @@ import { Link } from 'react-router-dom';
 import { Button, Table } from 'react-daisyui';
 import { TbEye, TbTrash } from 'react-icons/tb';
 
-export const MyOrderTableItem = ({ id, name, state, date, products, total }) => {
+import { stateTypeValues } from '../../../data/variables';
+
+export const MyOrderTableItem = ({ id, client, orderState, date, total }) => {
     return (
         <Table.Row>
             <div>{id}</div>
-            <div>{name}</div>
-            <div>{state}</div>
+            <div>{client}</div>
             <div>{date.toISOString().slice(0, 10)}</div>
-            <div>{products.length}</div>
+            <div>12:00</div>
+            <div>{stateTypeValues[orderState[orderState?.length - 1]?.stateType]}</div>
             <div>${total}</div>
             <div>
                 <Link

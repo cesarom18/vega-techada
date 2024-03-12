@@ -3,32 +3,27 @@ import { Table } from 'react-daisyui';
 import { usePaginatorSearchBar } from '../../../hooks';
 import { PaginatorSearchBar } from '../../../components';
 import { MyOrderTableItem } from './MyOrderTableItem';
-import { useEffect } from 'react';
 
 export const MyOrderTable = ({ orders }) => {
-    const { search, currentPage, setElements, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar();
-
-    useEffect(() => {
-        setElements(orders);
-    }, []);
+    const { search, currentPage, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar({ elements: orders, propToSearch: 'client' });
 
     return (
-        <PaginatorSearchBar
-            search={search}
-            currentPage={currentPage}
-            onSearchBarChange={onSearchBarChange}
-            onFilteredElements={onFilteredElements}
-            onPrevPage={onPrevPage}
-            onNextPage={onNextPage}
-            placeholder='Ingresa el nombre de quien realizo el pedido'>
-            <div className='overflow-x-auto'>
+        <div div className='overflow-x-auto' >
+            <PaginatorSearchBar
+                search={search}
+                currentPage={currentPage}
+                onSearchBarChange={onSearchBarChange}
+                onFilteredElements={onFilteredElements}
+                onPrevPage={onPrevPage}
+                onNextPage={onNextPage}
+                placeholder='Ingrese el nombre del cliente'>
                 <Table className='mb-4'>
                     <Table.Head>
                         <span>ID</span>
-                        <span>Solicitante</span>
-                        <span>Estado</span>
+                        <span>Cliente</span>
                         <span>Fecha De Solicitud</span>
-                        <span>Cantidad De Productos</span>
+                        <span>Hora De Solicitud</span>
+                        <span>Estado</span>
                         <span>Total</span>
                     </Table.Head>
                     <Table.Body>
@@ -41,7 +36,7 @@ export const MyOrderTable = ({ orders }) => {
                         }
                     </Table.Body>
                 </Table>
-            </div>
-        </PaginatorSearchBar>
+            </PaginatorSearchBar>
+        </div >
     )
 }

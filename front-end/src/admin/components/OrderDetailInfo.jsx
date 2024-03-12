@@ -14,7 +14,7 @@ export const OrderDetailInfo = () => {
 
     return (
         <>
-            <ul className='flex flex-col gap-4'>
+            <ul className='flex flex-col text-sm gap-4'>
                 <li className='flex flex-col'>
                     <span className='font-semibold'>Numero del pedido</span>
                     <span>12345</span>

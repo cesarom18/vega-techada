@@ -1,10 +1,10 @@
 import { useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Table, Button, Modal } from 'react-daisyui';
+import { Table, Button, Modal, Badge } from 'react-daisyui';
 import { TbEye, TbTrash } from 'react-icons/tb';
 
-export const MyProductTableItem = ({ id, name, offerType, category, availability, price }) => {
+export const MyProductTableItem = ({ id, name, offerType, category, unitType, stock, availability, price }) => {
     const modalRef = useRef(null);
 
     const onShowModal = useCallback(() => {
@@ -20,9 +20,18 @@ export const MyProductTableItem = ({ id, name, offerType, category, availability
             <Table.Row>
                 <div>{id}</div>
                 <div>{name}</div>
-                <div>{offerType}</div>
+                <div>{(offerType === 0) ? 'Producto' : 'Servicio' }</div>
                 <div>{category}</div>
-                <div>{availability}</div>
+                <div>{(unitType === 0) ? 'UN' : 'KG'}</div>
+                <div>{stock}</div>
+                <div>
+                    <Badge
+                        color={(availability) ? 'success' : 'error'}
+                        size='lg'
+                        className='text-sm text-gray-50 w-[75%]'>
+                        {(availability) ? 'Si' : 'No'}
+                    </Badge>
+                </div>
                 <div>${price}</div>
                 <div>
                     <Link

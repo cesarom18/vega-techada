@@ -7,23 +7,20 @@ export const Sidebar = ({ toggleSidebarVisible }) => {
         <nav className='bg-gray-50 flex flex-col justify-between gap-8 border-r-2 min-h-screen max-h-screen p-4'>
             <div>
                 <div className='logo flex justify-between mb-4'>
-                    <div className='flex items-center gap-6'>
-                        <span className='bg-gray-600 text-gray-50 text-center rounded-xl w-10 h-10 p-2'>V</span>
-                        <div>
-                            <h3 className='text-gray-600 font-bold'>Vega Techada</h3>
-                            <p className='text-gray-800 text-xs'>Panel de administracion</p>
-                        </div>
+                    <div className='flex items-center justify-center'>
+                        <span className='bg-gray-700 text-gray-50 text-center rounded-xl w-10 h-10 p-2'>V</span>
                     </div>
                     <Button
                         color='ghost'
-                        className='flex lg:hidden hover:bg-gray-800 hover:text-gray-50 text-2xl btn-circle '
+                        shape='circle'
+                        className='lg:hidden hover:bg-gray-800 text-gray-700 hover:text-gray-50 text-2xl '
                         onClick={toggleSidebarVisible}>
                         <TbX />
                     </Button>
                 </div>
                 <Divider />
-                <Menu className='text-gray-800 p-0'>
-                    <Menu.Title className='text-xs text-gray-600 uppercase font-semibold tracking-[2px] mb-3 px-0'>Analisis</Menu.Title>
+                <Menu className='text-gray-700 p-0'>
+                    <Menu.Title className='text-xs text-gray-800 uppercase font-semibold tracking-[2px] mb-3 px-0'>Analisis</Menu.Title>
                     <Menu.Item>
                         <Link
                             to='/admin/dashboard'
@@ -32,7 +29,7 @@ export const Sidebar = ({ toggleSidebarVisible }) => {
                             <span>Dashboard</span>
                         </Link>
                     </Menu.Item>
-                    <Menu.Title className='text-xs text-gray-600 uppercase font-semibold tracking-[2px] my-3 px-0'>Productos</Menu.Title>
+                    <Menu.Title className='text-xs text-gray-800 uppercase font-semibold tracking-[2px] my-3 px-0'>Productos</Menu.Title>
                     <Menu.Item>
                         <Link
                             to='/admin/my-products'
@@ -49,7 +46,7 @@ export const Sidebar = ({ toggleSidebarVisible }) => {
                             <span>Registrar Producto</span>
                         </Link>
                     </Menu.Item>
-                    <Menu.Title className='text-xs text-gray-600 uppercase font-semibold tracking-[2px] my-3 px-0'>Pedidos</Menu.Title>
+                    <Menu.Title className='text-xs text-gray-800 uppercase font-semibold tracking-[2px] my-3 px-0'>Pedidos</Menu.Title>
                     <Menu.Item>
                         <Link
                             to='/admin/my-orders'

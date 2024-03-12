@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Divider, Dropdown, Button, Alert } from 'react-daisyui';
 import { TbBell, TbInfoCircle, TbBellRinging } from 'react-icons/tb';
 
@@ -17,7 +18,7 @@ export const HeaderLastOrders = () => {
                 }
             </Dropdown.Toggle>
             <Dropdown.Menu className='z-10 mt-10 w-80 max-h-[500px] '>
-                <div className='flex flex-col overflow-y-scroll p-2'>
+                <div className='flex flex-col overflow-y-scroll p-4'>
                     <div className='text-sm text-center font-semibold p-1'>Ultimos Pedidos ({lastOrders.length})</div>
                     <Divider className='my-1' />
                     {
@@ -25,7 +26,7 @@ export const HeaderLastOrders = () => {
                             ? <HeaderLastOrdersList lastOrders={lastOrders} />
                             : <Alert icon={<TbInfoCircle className='text-xl' />}>No hay pedidos nuevos registrados</Alert>
                     }
-                    {(lastOrders.length > 5) && <Button size='md' className='bg-gray-800 hover:bg-gray-700 text-gray-50 mt-4'>Ver Mas</Button>}
+                    {(lastOrders.length > 5) && <Link to='/admin/my-orders' className='btn btn-ghost bg-gray-800 hover:bg-gray-700 text-gray-50 mt-4'>Ver Mis Pedidos</Link>}
                 </div>
             </Dropdown.Menu>
         </Dropdown>

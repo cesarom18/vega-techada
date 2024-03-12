@@ -19,7 +19,7 @@ export const Header = () => {
                             src='/img/shop-admin-test.jpg'
                             className='object-cover rounded-xl cursor-pointer ring-4 ring-gray-200 hover:ring-gray-300 w-10 h-10' />
                     </Dropdown.Toggle>
-                    <Dropdown.Menu className='mt-10 w-52'>
+                    <Dropdown.Menu className='z-10 text-sm mt-10 w-52 p-4'>
                         <div className='flex flex-col justify-center items-center gap-0'>
                             <span className='text-gray-800 font-semibold'>Local Ejemplo</span>
                             <span className='text-gray-600'>Dueño Local Ejemplo</span>

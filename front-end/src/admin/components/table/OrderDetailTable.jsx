@@ -5,7 +5,7 @@ import { PaginatorSearchBar } from '../../../components';
 import { OrderDetailTableItem } from './OrderDetailTableItem';
 
 export const OrderDetailTable = ({ orderProducts }) => {
-    const { search, currentPage, setElements, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar();
+    const { search, currentPage, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar({ elements: orderProducts, propToSearch: 'name' });
 
     return (
         <PaginatorSearchBar

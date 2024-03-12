@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-export const usePaginatorSearchBar = () => {
-    const [elements, setElements] = useState([]);
+export const usePaginatorSearchBar = ({ elements, propToSearch }) => {
     const [search, setSearch] = useState('');
     const [currentPage, setCurrentPage] = useState(0);
 
@@ -15,7 +14,7 @@ export const usePaginatorSearchBar = () => {
             return elements.slice(currentPage, currentPage + 5);
         };
 
-        const filtered = elements.filter((e) => e.name.toLowerCase().includes(search.toLocaleLowerCase()));
+        const filtered = elements.filter((e) => e[propToSearch].toLowerCase().includes(search.toLocaleLowerCase()));
         return filtered.slice(currentPage, currentPage + 5);
     };
 
@@ -26,7 +25,7 @@ export const usePaginatorSearchBar = () => {
     };
 
     const onNextPage = () => {
-        if (elements.filter((e) => e.name.includes(search)).length > currentPage + 5) {
+        if (elements.filter((e) => e[propToSearch].includes(search)).length > currentPage + 5) {
             setCurrentPage((prevState) => prevState + 5);
         };
     };
@@ -34,7 +33,6 @@ export const usePaginatorSearchBar = () => {
     return {
         search,
         currentPage,
-        setElements,
         onSearchBarChange,
         onFilteredElements,
         onPrevPage,

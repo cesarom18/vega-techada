@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Card } from 'react-daisyui';
 import { TbShoppingCartCog } from 'react-icons/tb';
 
 import { AdminLayout } from '../layout/AdminLayout';
 import { ProductDetailForm } from '../components/form';
-import { BreadcrumbPage } from '../components/BreadcrumbPage'
 import { products } from '../data';
 
 export const ProductDetail = () => {
@@ -18,17 +17,11 @@ export const ProductDetail = () => {
     }, []);
 
     return (
-        <AdminLayout>
-            <div className='flex flex-col md:flex-row justify-between items-center mb-12'>
-                <BreadcrumbPage
-                    pageIcon={<TbShoppingCartCog />}
-                    pageName='Detalle Producto' />
-                <Link
-                    to='/admin/my-products'
-                    className='btn btn-md btn-ghost bg-gray-800 hover:bg-gray-700 text-gray-50 w-full md:w-40 mt-4 lg:mt-0'>
-                    Volver A Mis Productos
-                </Link>
-            </div>
+        <AdminLayout
+            breadPageIcon={<TbShoppingCartCog />}
+            breadPageText='Detalles Del Producto'
+            breadLinkPath='/admin/my-products'
+            breadLinkText='Volver A Mis Productos'>
             <Card className='bg-gray-50'>
                 <Card.Body>
                     <Card.Title className='mb-2'>Detalles Del Producto</Card.Title>

@@ -1,15 +1,20 @@
 import { Button, Input, Pagination } from 'react-daisyui';
+import { TbSearch } from 'react-icons/tb'
 
 export const PaginatorSearchBar = ({ children, search, currentPage, onSearchBarChange, onPrevPage, onNextPage, placeholder }) => {
     return (
         <>
-            <Input
-                type='text'
-                value={search}
-                onChange={onSearchBarChange}
-                placeholder={placeholder} />
+            <div className='relative'>
+                <Input
+                    type='text'
+                    value={search}
+                    className='pl-8 w-full'
+                    onChange={onSearchBarChange}
+                    placeholder={placeholder} />
+                <TbSearch className='absolute top-[16px] left-3 text-gray-700' />
+            </div>
             {children}
-            <Pagination className='flex justify-evenly items-center mt-4'>
+            <Pagination className='flex justify-between lg:justify-evenly items-center mt-4'>
                 <Button
                     color='ghost'
                     size='md'

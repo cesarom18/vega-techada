@@ -54,80 +54,100 @@ export const products = [
         "id": 26,
         "name": "Chicken",
         "offerType": 0,
-        "category": 3,
-        "availability": 1,
+        "category": "Carnes",
+        "unitType": 1,
+        "stock": 10,
+        "availability": false,
         "price": "609.00"
     },
     {
         "id": 54,
-        "name": "Computer",
+        "name": "Egg",
         "offerType": 1,
-        "category": 1,
-        "availability": 1,
+        "category": "Huevos",
+        "unitType": 0,
+        "stock": 8,
+        "availability": true,
         "price": "34.00"
     },
     {
         "id": 65,
-        "name": "Gloves",
+        "name": "Apple",
         "offerType": 0,
-        "category": 2,
-        "availability": 1,
+        "category": "Frutas y verduras",
+        "unitType": 1,
+        "stock": 12,
+        "availability": false,
         "price": "785.00"
     },
     {
         "id": 80,
         "name": "Bacon",
         "offerType": 1,
-        "category": 3,
-        "availability": 1,
+        "category": "Comidas preparadas",
+        "unitType": 0,
+        "stock": 10,
+        "availability": true,
         "price": "248.00"
     },
     {
         "id": 70,
         "name": "Fish",
         "offerType": 1,
-        "category": 3,
-        "availability": 0,
+        "category": "Carnes",
+        "unitType": 1,
+        "stock": 2,
+        "availability": false,
         "price": "388.00"
     },
     {
         "id": 15,
         "name": "Soap",
         "offerType": 0,
-        "category": 1,
-        "availability": 1,
+        "category": "Comidas preparadas",
+        "unitType": 0,
+        "stock": 9,
+        "availability": true,
         "price": "29.00"
     },
     {
         "id": 29,
-        "name": "Chair",
+        "name": "Orange",
         "offerType": 1,
-        "category": 0,
-        "availability": 0,
+        "category": "Frutas y verduras",
+        "unitType": 1,
+        "stock": 11,
+        "availability": false,
         "price": "177.00"
     },
     {
         "id": 14,
         "name": "Bacon",
         "offerType": 0,
-        "category": 0,
-        "availability": 0,
+        "category": "Comidas preparadas",
+        "unitType": 0,
+        "stock": 0,
+        "availability": true,
         "price": "164.00"
     },
     {
         "id": 99,
-        "name": "Computer",
+        "name": "Milk",
         "offerType": 0,
-        "category": 2,
-        "availability": 0,
+        "category": "Lacteos",
+        "unitType": 0,
+        "stock": 13,
+        "availability": false,
         "price": "187.00"
     },
     {
         "id": 8,
-        "name": "Gloves",
+        "name": "Peanut",
         "offerType": 1,
-        "category": 1,
-        "availability": 0,
+        "category": "Productos secos",
+        "unitType": 0,
+        "stock": 4,
+        "availability": true,
         "price": "385.00"
     }
 ];
@@ -135,9 +155,37 @@ export const products = [
 export const orders = [
     {
         "id": 11,
-        "name": "Theresia",
-        "lastName": "Effertz",
-        "state": 0,
+        "client": "Theresia Effertz",
+        "orderState": [
+            {
+                "stateType": 0,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 1,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 4,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 5,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 6,
+                "changeDate": new Date('2024-03-08')
+            }
+        ],
         "paymentMethod": 0,
         "date": new Date('2024-03-08'),
         "products": [
@@ -191,9 +239,38 @@ export const orders = [
     },
     {
         "id": 25,
-        "name": "Melvina",
-        "lastName": "Bogan",
-        "state": 5,
+        "client": "Jef Cold",
+        "rut": "12.123.123-1",
+        "orderState": [
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 0,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 1,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 5,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            }
+        ],
         "paymentMethod": 0,
         "date": new Date('2024-03-08'),
         "products": [
@@ -220,9 +297,37 @@ export const orders = [
     },
     {
         "id": 12,
-        "name": "Alejandrin",
-        "lastName": "Kirlin",
-        "state": 2,
+        "client": "Alejandrin Kirlin",
+        "orderState": [
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 0,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 1,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 5,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            }
+        ],
         "paymentMethod": 1,
         "date": new Date('2024-03-08'),
         "products": [
@@ -267,9 +372,38 @@ export const orders = [
     },
     {
         "id": 88,
-        "name": "Rafaela",
-        "lastName": "Hettinger",
-        "state": 3,
+        "client": "Rafaela Hettinger",
+        "rut": "12.123.123-1",
+        "orderState": [
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 0,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 1,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 5,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            }
+        ],
         "paymentMethod": 0,
         "date": new Date('2024-03-08'),
         "products": [
@@ -323,9 +457,37 @@ export const orders = [
     },
     {
         "id": 66,
-        "name": "Felicita",
-        "lastName": "Bartell",
-        "state": 1,
+        "client": "Felicita Bartell",
+        "orderState": [
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 0,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 1,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 5,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            }
+        ],
         "paymentMethod": 1,
         "date": new Date('2024-03-08'),
         "products": [
@@ -370,9 +532,37 @@ export const orders = [
     },
     {
         "id": 25,
-        "name": "Freddie",
-        "lastName": "Gibson",
-        "state": 4,
+        "client": "Freddie Gibson",
+        "orderState": [
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 0,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 1,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 5,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            }
+        ],
         "paymentMethod": 0,
         "date": new Date('2024-03-08'),
         "products": [
@@ -399,9 +589,37 @@ export const orders = [
     },
     {
         "id": 27,
-        "name": "Vicente",
-        "lastName": "Hoppe",
-        "state": 1,
+        "client": "Vicente Hoppe",
+        "orderState": [
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 0,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 1,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 5,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            }
+        ],
         "paymentMethod": 0,
         "date": new Date('2024-03-08'),
         "products": [
@@ -428,9 +646,37 @@ export const orders = [
     },
     {
         "id": 99,
-        "name": "Tressie",
-        "lastName": "Kutch",
-        "state": 3,
+        "client": "Tressie Kutch",
+        "orderState": [
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 0,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 1,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 5,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            }
+        ],
         "paymentMethod": 1,
         "date": new Date('2024-03-08'),
         "products": [
@@ -475,9 +721,37 @@ export const orders = [
     },
     {
         "id": 9,
-        "name": "Nyah",
-        "lastName": "Farrell",
-        "state": 2,
+        "client": "Nyah Farrell",
+        "orderState": [
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 0,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 1,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 5,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            }
+        ],
         "paymentMethod": 0,
         "date": new Date('2024-03-08'),
         "products": [
@@ -540,9 +814,37 @@ export const orders = [
     },
     {
         "id": 74,
-        "name": "Stephania",
-        "lastName": "Hane",
-        "state": 4,
+        "client": "Stephania Hane",
+        "orderState": [
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 2,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 0,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 1,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 5,
+                "changeDate": new Date('2024-03-08')
+            },
+            {
+                "stateType": 3,
+                "changeDate": new Date('2024-03-08')
+            }
+        ],
         "paymentMethod": 0,
         "date": new Date('2024-03-08'),
         "products": [

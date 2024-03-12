@@ -3,14 +3,9 @@ import { Table } from 'react-daisyui';
 import { usePaginatorSearchBar } from '../../../hooks';
 import { PaginatorSearchBar } from '../../../components';
 import { MyProductTableItem } from './MyProductTableItem';
-import { useEffect, useState } from 'react';
 
 export const MyProductTable = ({ products }) => {
-    const { search, currentPage, setElements, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar();
-
-    useEffect(() => {
-        setElements(products)
-    }, [])
+    const { search, currentPage, setElements, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar({ elements: products, propToSearch: 'name' });
 
     return (
         <PaginatorSearchBar
@@ -28,13 +23,15 @@ export const MyProductTable = ({ products }) => {
                         <span>Nombre</span>
                         <span>Tipo Oferta</span>
                         <span>Categoria</span>
-                        <span>Disponibilidad</span>
+                        <span>Unidad Medida</span>
+                        <span>Stock</span>
+                        <span>¿Visible?</span>
                         <span>Precio</span>
                     </Table.Head>
                     <Table.Body>
                         {
                             onFilteredElements().map((e) => (
-                                <MyProductTableItem
+                            <MyProductTableItem
                                     key={e.id}
                                     {...e} />
                             ))
