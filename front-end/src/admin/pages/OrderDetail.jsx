@@ -10,77 +10,48 @@ import { OrderDetailTimeline } from '../components/OrderDetailTimeline';
 import { orders } from '../data';
 
 export const OrderDetail = () => {
-    const [order, setOrder] = useState(null);
+  const [order, setOrder] = useState(null);
 
-    const { orderId } = useParams();
+  const { orderId } = useParams();
 
-    useEffect(() => {
-        setOrder((prevState) => orders.find((o) => o.id == orderId));
-    }, [])
+  useEffect(() => {
+    setOrder((prevState) => orders.find((o) => o.id == orderId));
+  }, []);
 
-    return (
-        <AdminLayout
-            breadPageIcon={<TbReceiptTax />}
-            breadPageText='Detalle Pedido'
-            breadLinkPath='/admin/my-orders'
-            breadLinkText='Volver A Mis Pedidos'>
-            <div className='grid grid-cols-5 gap-4 mb-4'>
-                <div className='col-span-12 lg:col-span-4'>
-                    <Card className='bg-gray-50 h-full'>
-                        <Card.Body>
-                            <Card.Title className='mb-2'>Productos asociados al pedido</Card.Title>
-                            <OrderDetailTable orderProducts={order?.products} />
-                        </Card.Body>
-                    </Card>
-                </div>
-                <div className='col-span-12 lg:col-span-1'>
-                    <Card className='bg-gray-50'>
-                        <Card.Body>
-                            <Card.Title className='mb-2'>Informacion del pedido #{order?.id}</Card.Title>
-                            <OrderDetailInfo />
-                        </Card.Body>
-                    </Card>
-                </div>
-            </div>
-            <div className='grid grid-cols-12'>
-                <div className='col-span-12'>
-                    <Card className='bg-gray-50'>
-                        <Card.Body>
-                            <Card.Title className='mb-2'>Linea de estados del pedido</Card.Title>
-                            <OrderDetailTimeline orderState={order?.orderState} />
-                        </Card.Body>
-                    </Card>
-                </div>
-            </div>
-            {/* <div className='grid grid-cols-12 mb-4'>
-                <div className='col-span-12 h-[60%]'>
-                    <Card className='bg-gray-50 '>
-                        <Card.Body>
-                            <Card.Title className='mb-2'>Informacion del pedido #{order?.id}</Card.Title>
-                            <OrderDetailInfo />
-                        </Card.Body>
-                    </Card>
-                </div>
-            </div>
-            <div className='grid grid-cols-7 gap-4'>
-                <div className='col-span-5'>
-                    <Card className='bg-gray-50 h-full'>
-                        <Card.Body>
-                            <Card.Title className='mb-2'>Productos asociados al pedido</Card.Title>
-                            <OrderDetailTable orderProducts={order?.products}/>
-                        </Card.Body>
-                    </Card>
-                </div>
-                <div className='col-span-2'>
-                    <Card className='bg-gray-50'>
-                        <Card.Body>
-                            <Card.Title className='mb-2'>Linea de estados del pedido</Card.Title>
-                            <OrderDetailTimeline />
-                        </Card.Body>
-                    </Card>
-
-                </div>
-            </div> */}
-        </AdminLayout>
-    );
+  return (
+    <AdminLayout
+      breadPageIcon={<TbReceiptTax />}
+      breadPageText='Detalle Pedido'
+      breadLinkPath='/admin/my-orders'
+      breadLinkText='Volver A Mis Pedidos'>
+      <div className='grid grid-cols-5 gap-4 mb-4'>
+        <div className='col-span-12 lg:col-span-3'>
+          <Card className='bg-gray-50 h-full'>
+            <Card.Body>
+              <Card.Title className='mb-2'>Productos asociados al pedido</Card.Title>
+              <OrderDetailTable orderProducts={order?.products} />
+            </Card.Body>
+          </Card>
+        </div>
+        <div className='col-span-12 lg:col-span-2'>
+          <Card className='bg-gray-50'>
+            <Card.Body>
+              <Card.Title className='mb-2'>Informacion del pedido #{order?.id}</Card.Title>
+              <OrderDetailInfo />
+            </Card.Body>
+          </Card>
+        </div>
+      </div>
+      <div className='grid grid-cols-12'>
+        <div className='col-span-12'>
+          <Card className='bg-gray-50'>
+            <Card.Body>
+              <Card.Title className='mb-2'>Linea de estados del pedido</Card.Title>
+              <OrderDetailTimeline orderState={order?.orderState} />
+            </Card.Body>
+          </Card>
+        </div>
+      </div>
+    </AdminLayout>
+  );
 };

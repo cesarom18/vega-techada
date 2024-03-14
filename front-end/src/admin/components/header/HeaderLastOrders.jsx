@@ -6,29 +6,29 @@ import { HeaderLastOrdersList } from './';
 import { lastOrders } from '../../data';
 
 export const HeaderLastOrders = () => {
-    return (
-        <Dropdown>
-            <Dropdown.Toggle
-                button={false}
-                className='btn btn-circle btn-ghost hover:bg-gray-800 hover:text-gray-50 text-2xl'>
-                {
-                    (lastOrders.length !== 0)
-                        ? < TbBellRinging />
-                        : <TbBell />
-                }
-            </Dropdown.Toggle>
-            <Dropdown.Menu className='z-10 mt-10 w-80 max-h-[500px] '>
-                <div className='flex flex-col overflow-y-scroll p-4'>
-                    <div className='text-sm text-center font-semibold p-1'>Ultimos Pedidos ({lastOrders.length})</div>
-                    <Divider className='my-1' />
-                    {
-                        (lastOrders.length !== 0)
-                            ? <HeaderLastOrdersList lastOrders={lastOrders} />
-                            : <Alert icon={<TbInfoCircle className='text-xl' />}>No hay pedidos nuevos registrados</Alert>
-                    }
-                    {(lastOrders.length > 5) && <Link to='/admin/my-orders' className='btn btn-ghost bg-gray-800 hover:bg-gray-700 text-gray-50 mt-4'>Ver Mis Pedidos</Link>}
-                </div>
-            </Dropdown.Menu>
-        </Dropdown>
-    );
+  return (
+    <Dropdown>
+      <Dropdown.Toggle
+        button={false}
+        className='btn btn-circle btn-ghost hover:bg-gray-800 hover:text-gray-50 text-2xl'>
+        {
+          (lastOrders.length !== 0)
+            ? < TbBellRinging />
+            : <TbBell />
+        }
+      </Dropdown.Toggle>
+      <Dropdown.Menu className='z-10 mt-10 w-80 max-h-[500px] '>
+        <div className='flex flex-col overflow-y-scroll p-4'>
+          <div className='text-sm text-center font-semibold p-1'>Ultimos Pedidos ({lastOrders.length})</div>
+          <Divider className='my-1' />
+          {
+            (lastOrders.length !== 0)
+              ? <HeaderLastOrdersList lastOrders={lastOrders} />
+              : <Alert icon={<TbInfoCircle className='text-xl' />}>No hay pedidos nuevos registrados</Alert>
+          }
+          {(lastOrders.length > 5) && <Link to='/admin/my-orders' className='btn btn-ghost bg-gray-800 hover:bg-gray-700 text-gray-50 mt-4'>Ver Mis Pedidos</Link>}
+        </div>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
 };
