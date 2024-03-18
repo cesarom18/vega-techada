@@ -1,6 +1,10 @@
-import { Link } from 'react-router-dom';
 import { Menu, Divider, Button } from 'react-daisyui';
-import { TbLayoutDashboard, TbShoppingCart, TbShoppingCartPlus, TbReceipt, TbSettings, TbHelpCircle, TbX } from 'react-icons/tb';
+import { TbX, TbSettings, TbHelpCircle } from 'react-icons/tb';
+
+import { OwnerSidebarMenu } from './OwnerSidebarMenu';
+import { StoreSidebarMenu } from './StoreSidebarMenu';
+
+const userType = 0;
 
 export const Sidebar = ({ toggleSidebarVisible }) => {
     return (
@@ -19,43 +23,11 @@ export const Sidebar = ({ toggleSidebarVisible }) => {
                     </Button>
                 </div>
                 <Divider />
-                <Menu className='text-gray-700 p-0'>
-                    <Menu.Title className='text-xs text-gray-800 uppercase font-semibold tracking-[2px] mb-3 px-0'>Analisis</Menu.Title>
-                    <Menu.Item>
-                        <Link
-                            to='/admin/dashboard'
-                            className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
-                            <TbLayoutDashboard className='text-xl' />
-                            <span>Dashboard</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Title className='text-xs text-gray-800 uppercase font-semibold tracking-[2px] my-3 px-0'>Productos</Menu.Title>
-                    <Menu.Item>
-                        <Link
-                            to='/admin/my-products'
-                            className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
-                            <TbShoppingCart className='text-xl' />
-                            <span>Mis Productos</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item>
-                        <Link
-                            to='/admin/register-product'
-                            className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
-                            <TbShoppingCartPlus className='text-xl' />
-                            <span>Registrar Producto</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Title className='text-xs text-gray-800 uppercase font-semibold tracking-[2px] my-3 px-0'>Pedidos</Menu.Title>
-                    <Menu.Item>
-                        <Link
-                            to='/admin/my-orders'
-                            className='flex items-center gap-4  hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
-                            <TbReceipt className='text-xl' />
-                            <span>Mis Pedidos</span>
-                        </Link>
-                    </Menu.Item>
-                </Menu>
+                {
+                    (userType === 0)
+                        ? <OwnerSidebarMenu />
+                        : <StoreSidebarMenu />
+                }
             </div>
             <div>
                 <Menu className='text-gray-800 mt-4 p-0'>
@@ -63,7 +35,7 @@ export const Sidebar = ({ toggleSidebarVisible }) => {
                         <a
                             href='#'
                             className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
-                            <TbSettings className='w-5 h-5'/>
+                            <TbSettings className='w-5 h-5' />
                             Ajustes
                         </a>
                     </Menu.Item>
