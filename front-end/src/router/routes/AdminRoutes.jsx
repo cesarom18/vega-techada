@@ -1,12 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { MyUsers, MyProducts, RegisterProduct, ProductDetail, MyOrders, OrderDetail } from '../../admin/pages';
+import { MyUsers, RegisterUser, MyProducts, RegisterProduct, ProductDetail, MyOrders, OrderDetail } from '../../admin/pages';
 
 export const AdminRoutes = () => {
     return (
         <Routes>
             {/* Owner Routes */}
             <Route path='/my-users' element={<MyUsers />} />
+            <Route path='/register-user' element={<RegisterUser />} />
             {/* Store Routes */}
             <Route path='/my-products' element={<MyProducts />} />
             <Route path='/register-product' element={<RegisterProduct />} />

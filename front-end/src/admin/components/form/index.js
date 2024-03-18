@@ -1,2 +1,3 @@
 export * from './ProductDetailForm';
-export * from './ProductRegistrationForm';
+export * from './ProductRegisterForm';
+export * from './UserRegisterForm';

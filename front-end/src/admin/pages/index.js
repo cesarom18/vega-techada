@@ -4,3 +4,4 @@ export * from './MyUsers';
 export * from './OrderDetail';
 export * from './ProductDetail';
 export * from './RegisterProduct';
+export * from './RegisterUser';
