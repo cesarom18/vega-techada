@@ -879,3 +879,86 @@ export const orders = [
         "total": "29.00"
     }
 ];
+
+export const users = [
+    {
+        "id": 75,
+        "type": 0,
+        "fullName": "Mozelle Miller",
+        "email": "Kenyatta79@gmail",
+        "phone": "320.823.7286 x015",
+        "birthDate": "2007-10-10T21:15:29.098Z"
+    },
+    {
+        "id": 27,
+        "type": 0,
+        "fullName": "Hosea Reilly",
+        "email": "Clotilde23@gmail",
+        "phone": "763-964-7449 x954",
+        "birthDate": "1973-08-29T16:33:32.359Z"
+    },
+    {
+        "id": 33,
+        "type": 0,
+        "fullName": "Vern Price",
+        "email": "Helmer_McCullough44@gmail",
+        "phone": "916-580-0953",
+        "birthDate": "2006-12-07T11:52:35.797Z"
+    },
+    {
+        "id": 24,
+        "type": 0,
+        "fullName": "Faye Koepp",
+        "email": "Alessia.Sipes@gmail",
+        "phone": "549.918.9952 x62703",
+        "birthDate": "1998-03-12T07:26:57.846Z"
+    },
+    {
+        "id": 62,
+        "type": 0,
+        "fullName": "Rebecca Hilll",
+        "email": "Anahi.Zulauf54@gmail",
+        "phone": "797-881-5197 x364",
+        "birthDate": "2014-12-03T13:59:57.288Z"
+    },
+    {
+        "id": 87,
+        "type": 1,
+        "fullName": "Heber Rohan",
+        "email": "Frankie46@gmail",
+        "phone": "755-541-6315 x730",
+        "birthDate": "1976-01-02T10:03:33.711Z"
+    },
+    {
+        "id": 67,
+        "type": 0,
+        "fullName": "Giovanny Gutkowski",
+        "email": "Ivy_Hessel35@gmail",
+        "phone": "871-209-6268 x0286",
+        "birthDate": "1974-09-20T02:25:22.082Z"
+    },
+    {
+        "id": 42,
+        "type": 1,
+        "fullName": "Kacie Kunze",
+        "email": "Clair_Mraz@gmail",
+        "phone": "552.661.9291 x74665",
+        "birthDate": "2023-10-22T04:41:26.301Z"
+    },
+    {
+        "id": 7,
+        "type": 0,
+        "fullName": "Johnathan Kris",
+        "email": "Alexandro.Howe@gmail",
+        "phone": "(878) 537-1854",
+        "birthDate": "2012-03-13T06:10:18.873Z"
+    },
+    {
+        "id": 23,
+        "type": 0,
+        "fullName": "Megane McClure",
+        "email": "Queenie58@gmail",
+        "phone": "(513) 829-2558",
+        "birthDate": "1977-05-20T01:38:00.286Z"
+    }
+];

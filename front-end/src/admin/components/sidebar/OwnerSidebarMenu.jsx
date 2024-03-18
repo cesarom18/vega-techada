@@ -17,7 +17,7 @@ export const OwnerSidebarMenu = () => {
             <Menu.Title className='text-xs text-gray-800 uppercase font-semibold tracking-[2px] my-3 px-0'>Usuarios</Menu.Title>
             <Menu.Item>
                 <Link
-                    to=''
+                    to='/admin/my-users'
                     className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
                     <TbUser className='text-xl' />
                     <span>Mis Usuarios</span>
