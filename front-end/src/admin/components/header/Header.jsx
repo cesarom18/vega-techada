@@ -25,7 +25,7 @@ export const Header = () => {
                             <span className='text-gray-600'>Dueño Local Ejemplo</span>
                         </div>
                         <Divider className='my-1' />
-                        <Dropdown.Item className='hover:bg-gray-800 hover:text-gray-50 ' >
+                        <Dropdown.Item className='hover:bg-gray-800 hover:text-gray-50' >
                             <TbLogout2 /> Cerrar Sesion
                         </Dropdown.Item>
                     </Dropdown.Menu>
