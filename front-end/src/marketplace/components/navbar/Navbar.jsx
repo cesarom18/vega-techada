@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
-import { Button, Dropdown, Menu, Navbar as NavbarDaisy, Divider } from 'react-daisyui';
+import { Button, Dropdown, Menu, Navbar as NavbarDaisy, Divider, Indicator, Badge } from 'react-daisyui';
 import { Link } from 'react-router-dom';
-import { TbMenu2, TbX } from 'react-icons/tb';
+import { TbMenu2, TbX, TbShoppingCart } from 'react-icons/tb';
 
 import { marketplacePaths } from '../../../router/routes/paths';
 
@@ -12,11 +12,9 @@ export const Navbar = () => {
         setNavbarMenu((prevState) => !prevState);
     }, []);
 
-    console.log(navbarMenu)
-
     return (
         <>
-            <NavbarDaisy className='bg-gray-50 shadow-md px-4'>
+            <NavbarDaisy className='bg-gray-50 fixed z-[3] shadow-md px-8'>
                 <NavbarDaisy.Start>
                     <Link
                         to='/marketplace'
@@ -33,7 +31,7 @@ export const Navbar = () => {
                                 <Menu.Item key={i}>
                                     <Link
                                         to={fullPath}
-                                        className='underline-animation hover:bg-transparent'>
+                                        className='underline-animation hover:bg-transparent uppercase'>
                                         {name}
                                     </Link>
                                 </Menu.Item>
@@ -41,9 +39,22 @@ export const Navbar = () => {
                         }
                     </Menu>
                 </NavbarDaisy.Center>
-                <NavbarDaisy.End>
+                <NavbarDaisy.End className='flex gap-4'>
+                    <Button
+                        color='ghost'
+                        shape='square'
+                        className='bg-gray-50 text-gray-700'>
+                        <Indicator>
+                            <Badge size='sm' className={Indicator.Item.className()}>
+                                8
+                            </Badge>
+                            <TbShoppingCart
+                                className='w-5 h-5' />
+                        </Indicator>
+                    </Button>
                     <Dropdown
                         end
+                        vertical='bottom'
                         className='hidden lg:flex'>
                         <Button
                             color='ghost'
@@ -53,10 +64,13 @@ export const Navbar = () => {
                                 <img src='/img/shop-admin-test.jpg' />
                             </div>
                         </Button>
-                        <Dropdown.Menu className='menu-sm w-52 mt-3'>
-                            <Dropdown.Item className='hover:bg-gray-800 hover:text-gray-50'>Mi Cuenta</Dropdown.Item>
-                            <Dropdown.Item className='hover:bg-gray-800 hover:text-gray-50'>Mi Cuenta</Dropdown.Item>
-                            <Dropdown.Item className='hover:bg-gray-800 hover:text-gray-50'>Cerrar Sesion</Dropdown.Item>
+                        <Dropdown.Menu className='menu-sm z-[1] w-52 mt-6 p-4'>
+                            <div className='flex justify-center items-center'>
+                                <span className='text-gray-800 font-semibold'>Nombre Apellido</span>
+                            </div>
+                            <Divider className='my-1' />
+                            <Dropdown.Item className='hover:bg-gray-800 hover:text-gray-50 px-4 py-2'>Mi Cuenta</Dropdown.Item>
+                            <Dropdown.Item className='hover:bg-gray-800 hover:text-gray-50 px-4 py-2'>Cerrar Sesion</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     <Button
@@ -68,11 +82,12 @@ export const Navbar = () => {
                     </Button>
                 </NavbarDaisy.End>
             </NavbarDaisy>
-            <div className={`fixed z-20 top-0 ${(navbarMenu) ? '-left-0' : '-left-full'} lg:hidden self-start overflow-y-scroll transition-all w-full`}>
+            <div className={`fixed z-[3] top-0 ${(navbarMenu) ? '-left-0' : '-left-full'} lg:hidden self-start overflow-y-scroll transition-all w-full`}>
                 <Menu
                     vertical
                     className='bg-gray-50 min-h-screen'>
-                    <div className='flex justify-end'>
+                    <div className='flex justify-between items-center pl-2'>
+                        <span className='text-xl font-semibold'>VegaTechada</span>
                         <Button
                             color='ghost'
                             size='md'
@@ -87,12 +102,19 @@ export const Navbar = () => {
                             <Menu.Item key={i}>
                                 <Link
                                     to={fullPath}
-                                    className='hover:bg-gray-800 hover:text-gray-50 justify-center'>
+                                    className='hover:bg-gray-800 hover:text-gray-50 justify-center py-4'>
                                     {name}
                                 </Link>
                             </Menu.Item>
                         ))
                     }
+                    <Menu.Item>
+                        <Link
+                            to=''
+                            className='hover:bg-gray-800 hover:text-gray-50 justify-center py-4'>
+                            Mi cuenta
+                        </Link>
+                    </Menu.Item>
                 </Menu>
             </div>
         </>
