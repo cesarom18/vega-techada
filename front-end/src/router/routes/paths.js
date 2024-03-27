@@ -6,7 +6,7 @@ export const marketplacePaths = [
     },
     {
         name: 'Tiendas',
-        path: '/store',
+        path: '/stores',
         fullPath: '/marketplace/stores'
     },
     {

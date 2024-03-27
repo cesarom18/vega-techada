@@ -4,7 +4,7 @@ import { TbSearch } from 'react-icons/tb'
 export const PaginatorSearchBar = ({ children, search, currentPage, onSearchBarChange, onPrevPage, onNextPage, placeholder }) => {
     return (
         <>
-            <div className='relative'>
+            <div className='relative mb-4'>
                 <Input
                     type='text'
                     value={search}

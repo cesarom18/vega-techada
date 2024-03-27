@@ -5,7 +5,7 @@ import { PaginatorSearchBar } from '../../../components';
 import { MyProductTableItem } from './MyProductTableItem';
 
 export const MyProductTable = ({ products }) => {
-    const { search, currentPage, setElements, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar({ elements: products, propToSearch: 'name' });
+    const { search, currentPage, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar({ elements: products, propToSearch: 'name' });
 
     return (
         <PaginatorSearchBar
