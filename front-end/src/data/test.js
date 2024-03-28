@@ -9,7 +9,7 @@ export const stores = [
             "Lacteos"
         ],
         "image": "https://picsum.photos/seed/0804wHxee/640/480",
-        "available": "true"
+        "available": true
     },
     {
         "id": 30,
@@ -21,7 +21,7 @@ export const stores = [
             "Carnes"
         ],
         "image": "https://picsum.photos/seed/occmRDe/640/480",
-        "available": "true"
+        "available": true
     },
     {
         "id": 87,
@@ -33,7 +33,7 @@ export const stores = [
             "Huevos"
         ],
         "image": "https://loremflickr.com/640/480?lock=8277128671920128",
-        "available": "true"
+        "available": true
     },
     {
         "id": 57,
@@ -45,7 +45,7 @@ export const stores = [
             "Carnes"
         ],
         "image": "https://loremflickr.com/640/480?lock=1967843952295936",
-        "available": "true"
+        "available": true
     },
     {
         "id": 46,
@@ -57,7 +57,7 @@ export const stores = [
             "Lacteos"
         ],
         "image": "https://loremflickr.com/640/480?lock=1299624648245248",
-        "available": "true"
+        "available": true
     },
     {
         "id": 31,
@@ -69,7 +69,7 @@ export const stores = [
             "Lacteos"
         ],
         "image": "https://picsum.photos/seed/UZ9jO9CI/640/480",
-        "available": "false"
+        "available": false
     },
     {
         "id": 89,
@@ -81,7 +81,7 @@ export const stores = [
             "Huevos"
         ],
         "image": "https://loremflickr.com/640/480?lock=5683004393390080",
-        "available": "true"
+        "available": true
     },
     {
         "id": 79,
@@ -93,7 +93,7 @@ export const stores = [
             "Lacteos"
         ],
         "image": "https://picsum.photos/seed/fa959yZ/640/480",
-        "available": "false"
+        "available": false
     },
     {
         "id": 60,
@@ -105,7 +105,7 @@ export const stores = [
             "Carnes"
         ],
         "image": "https://loremflickr.com/640/480?lock=553345360068608",
-        "available": "false"
+        "available": false
     },
     {
         "id": 40,
@@ -117,6 +117,119 @@ export const stores = [
             "Huevos"
         ],
         "image": "https://loremflickr.com/640/480?lock=4250377631301632",
-        "available": "true"
+        "available": true
+    }
+];
+
+export const products = [
+    {
+        "id": 27,
+        "name": "Sleek Cotton Computer",
+        "offerType": "Servicio",
+        "category": "Carnes",
+        "image": "https://picsum.photos/seed/lbdAH9gb/640/480",
+        "unitType": "KG",
+        "stock": 7,
+        "availability": true,
+        "price": "635.00"
+    },
+    {
+        "id": 71,
+        "name": "Refined Cotton Bike",
+        "offerType": "Servicio",
+        "category": "Carnes",
+        "image": "https://picsum.photos/seed/GZg6syBy/640/480",
+        "unitType": "KG",
+        "stock": 6,
+        "availability": false,
+        "price": "877.00"
+    },
+    {
+        "id": 87,
+        "name": "Incredible Steel Shirt",
+        "offerType": "Servicio",
+        "category": "Huevos",
+        "image": "https://loremflickr.com/640/480?lock=4034762962370560",
+        "unitType": "UN",
+        "stock": 1,
+        "availability": true,
+        "price": "18.00"
+    },
+    {
+        "id": 83,
+        "name": "Practical Fresh Cheese",
+        "offerType": "Servicio",
+        "category": "Carnes",
+        "image": "https://picsum.photos/seed/HSNuHooww/640/480",
+        "unitType": "KG",
+        "stock": 1,
+        "availability": true,
+        "price": "869.00"
+    },
+    {
+        "id": 69,
+        "name": "Licensed Fresh Bacon",
+        "offerType": "Producto",
+        "category": "Huevos",
+        "image": "https://picsum.photos/seed/T1GLZmaG2K/640/480",
+        "unitType": "UN",
+        "stock": 9,
+        "availability": false,
+        "price": "641.00"
+    },
+    {
+        "id": 80,
+        "name": "Handmade Soft Gloves",
+        "offerType": "Producto",
+        "category": "Lacteos",
+        "image": "https://picsum.photos/seed/mjEOFFwds/640/480",
+        "unitType": "KG",
+        "stock": 7,
+        "availability": false,
+        "price": "813.00"
+    },
+    {
+        "id": 42,
+        "name": "Rustic Fresh Fish",
+        "offerType": "Producto",
+        "category": "Carnes",
+        "image": "https://picsum.photos/seed/tCiY5w2ni/640/480",
+        "unitType": "KG",
+        "stock": 9,
+        "availability": false,
+        "price": "608.00"
+    },
+    {
+        "id": 56,
+        "name": "Electronic Concrete Computer",
+        "offerType": "Producto",
+        "category": "Lacteos",
+        "image": "https://loremflickr.com/640/480?lock=7035227958411264",
+        "unitType": "UN",
+        "stock": 1,
+        "availability": false,
+        "price": "449.00"
+    },
+    {
+        "id": 17,
+        "name": "Oriental Fresh Sausages",
+        "offerType": "Producto",
+        "category": "Huevos",
+        "image": "https://picsum.photos/seed/6yahvW/640/480",
+        "unitType": "UN",
+        "stock": 6,
+        "availability": true,
+        "price": "53.00"
+    },
+    {
+        "id": 98,
+        "name": "Licensed Wooden Car",
+        "offerType": "Producto",
+        "category": "Huevos",
+        "image": "https://picsum.photos/seed/kbozdyILZ/640/480",
+        "unitType": "UN",
+        "stock": 10,
+        "availability": false,
+        "price": "172.00"
     }
 ];

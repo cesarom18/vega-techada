@@ -1,11 +1,11 @@
-import BannerImg from '/img/landing-banner.jpg';
+import defaultImg from '/img/landing-banner.jpg';
 
-export const Banner = ({ bannerTitle }) => {
+export const Banner = ({ bannerTitle, bannerImg = defaultImg }) => {
     return (
         <div className='relative flex content-center items-center justify-center h-[30vh] pt-16'>
             <div
                 className='absolute top-0 bg-center bg-cover w-full h-full'
-                style={{ backgroundImage: `url(${BannerImg})` }}>
+                style={{ backgroundImage: `url(${bannerImg})` }}>
                 <span className='bg-black absolute opacity-75  w-full h-full' />
             </div>
             <div className='container relative mx-auto'>

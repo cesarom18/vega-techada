@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Card, Divider } from 'react-daisyui';
 
-export const StoresItem = ({ name, owner, productCategories, description, image }) => {
+export const StoresItem = ({ id, name, owner, productCategories, description, image }) => {
   return (
     <Card className='grid grid-cols-6 gap-4 bg-gray-200 rounded-lg mb-4 p-4'>
       <div className='col-span-12 lg:col-span-2'>
@@ -38,7 +38,7 @@ export const StoresItem = ({ name, owner, productCategories, description, image 
         </div>
         <div className='flex justify-end'>
           <Link
-            to=''
+            to={`/marketplace/store-detail/${id}`}
             className='btn btn-md btn-ghost bg-gray-800 hover:bg-gray-700 text-gray-50'>
             Ver Tienda
           </Link>
