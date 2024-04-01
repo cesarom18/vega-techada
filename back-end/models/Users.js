@@ -31,6 +31,6 @@ const UserSchema = new Schema({
         enum: ['Cliente', 'Locatario', 'Admin'],
         default: 'Cliente',
     }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Users', UserSchema);

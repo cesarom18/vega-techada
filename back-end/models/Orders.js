@@ -41,9 +41,9 @@ const OrdersSchema = new Schema({
         }
     ],
     paymentMethod: {
-        type: String,
-        enum: ['Retiro Local', 'Transferencia Bancaria'],
-        default: 'Retiro Local',
+        type: Schema.Types.ObjectId,
+        ref: 'PaymentMethods',
+        required: true
     },
     finishDate: {
         type: Date,
