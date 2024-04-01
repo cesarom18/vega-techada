@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const OrdersSchema = new Schema({
-    customer: {
+    user: {
         type: Schema.Types.ObjectId,
-        ref: 'Customers',
+        ref: 'Users',
         required: true
     },
     shop: {
@@ -40,6 +40,11 @@ const OrdersSchema = new Schema({
             }
         }
     ],
+    paymentMethod: {
+        type: String,
+        enum: ['Retiro Local', 'Transferencia Bancaria'],
+        default: 'Retiro Local',
+    },
     finishDate: {
         type: Date,
         required: true
