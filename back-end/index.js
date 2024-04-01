@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+const router = require('./routes/index');
+
 // Connect MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_HOST, {
-    useNewUrlParser: true,
-});
+mongoose.connect(process.env.MONGO_HOST)
+    .catch((error) => console.log(error));
 
 // App Initialization
 const app = express();
@@ -18,6 +19,9 @@ app.use(cors());
 // Body Parser Habilitation
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Router Habilitation
+app.use('/api', router);
 
 // App Listener
 app.listen(process.env.PORT, () => {
