@@ -1,0 +1,68 @@
+import mongoose from 'mongoose';
+
+import OrderStates from '../models/OrderStates.js';
+
+export const getAllOrderStates = async (req, res, next) => {
+    try {
+        const orderStates = await OrderStates.find();
+        if (orderStates.length === 0) {
+            res.status(404).json({ message: 'No hay estados de orden registrados' });
+            return next();
+        };
+        res.status(200).json(orderStates);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+        next();
+    };
+};
+
+export const createOrderState = async (req, res, next) => {
+    const orderState = new OrderStates(req.body);
+    try {
+        await orderState.save();
+        res.status(201).json({ message: 'Estado de orden registrado con exito' });
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+        next();
+    };
+};
+
+export const updateOrderState = async (req, res, next) => {
+    try {
+        if (!mongoose.isValidObjectId(req.params.id)) {
+            res.status(404).json({ message: 'El ID otorgado no es valido' });
+            return next()
+        };
+
+        const query = await OrderStates.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true });
+        if (!query) {
+            res.status(404).json({ message: 'Estado de orden no encontrado' });
+            return next();
+        };
+
+        res.status(200).json({ message: 'Estado de orden actualizado con exito' });
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+        next();
+    };
+};
+
+export const deleteOrderState = async (req, res, next) => {
+    try {
+        if (!mongoose.isValidObjectId(req.params.id)) {
+            res.status(404).json({ message: 'El ID otorgado no es valido' });
+            return next()
+        };
+
+        const query = await OrderStates.findOneAndDelete({ _id: req.params.id });
+        if (!query) {
+            res.status(404).json({ message: 'Estado de orden no encontrado' });
+            return next();
+        };
+
+        res.status(200).json({ message: 'Estado de orden eliminado con exito' });
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+        next();
+    };
+};
