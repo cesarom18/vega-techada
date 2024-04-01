@@ -8,4 +8,4 @@ const OrderStatesSchema = new Schema({
     }
 });
 
-export default mongoose.model('OrderStates', OrderStatesSchema);
+export default mongoose.model('order_states', OrderStatesSchema);

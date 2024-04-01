@@ -8,4 +8,4 @@ const PaymentMethodsSchema = new Schema({
     }
 }, { timestamps: true });
 
-export default mongoose.model('PaymentMethods', PaymentMethodsSchema);
+export default mongoose.model('payment_methods', PaymentMethodsSchema);
