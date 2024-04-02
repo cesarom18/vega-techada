@@ -5,6 +5,7 @@ import { getAllProductCategories, createProductCategory, updateProductCategory, 
 import { uploadProductImage, createProduct } from '../controllers/productsController.js';
 import { getAllOrderStates, createOrderState, updateOrderState, deleteOrderState } from '../controllers/orderStatesController.js';
 import { getAllPaymentMethods, createPaymentMethod, updatePaymentMethod, deletePaymentMethod } from '../controllers/paymentMethodsController.js';
+import { getAllUsers, createUser, updateUser, deleteUser } from '../controllers/usersController.js';
 
 // Product Categories Endpoints
 router.get('/product-categories', getAllProductCategories);
@@ -26,5 +27,11 @@ router.get('/payment-methods', getAllPaymentMethods);
 router.post('/payment-methods', createPaymentMethod);
 router.put('/payment-methods/:id', updatePaymentMethod);
 router.delete('/payment-methods/:id', deletePaymentMethod);
+
+// Users Endpoints
+router.get('/users', getAllUsers);
+router.post('/users', createUser);
+router.put('/users/:id', updateUser);
+router.delete('/users/:id', deleteUser);
 
 export default router;
