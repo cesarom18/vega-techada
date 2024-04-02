@@ -8,6 +8,7 @@ const { getAllPaymentMethods, createPaymentMethod, updatePaymentMethod, deletePa
 const { getAllOrderStates, createOrderState, updateOrderState, deleteOrderState } = require('../controllers/orderStatesController.js');
 const { getAllUsers, createUser, updateUser, deleteUser } = require('../controllers/usersController.js');
 const { uploadShopImage, getAllShops, createShop, updateShop, deleteShop } = require('../controllers/shopsController.js');
+const { getAllOrders, createOrder, updateOrder, deleteOrder } = require('../controllers/ordersController.js');
 
 // Product Categories Endpoints
 router.get('/product-categories', getAllProductCategories);
@@ -44,5 +45,11 @@ router.get('/shops', getAllShops);
 router.post('/shops', uploadShopImage, createShop);
 router.put('/shops/:id', uploadShopImage, updateShop);
 router.delete('/shops/:id', deleteShop);
+
+// Orders Endpoints
+router.get('/orders', getAllOrders);
+router.post('/orders', createOrder);
+router.put('/orders/:id', updateOrder);
+router.delete('/orders/:id', deleteOrder);
 
 module.exports = router;
