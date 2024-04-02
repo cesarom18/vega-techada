@@ -36,6 +36,29 @@ const uploadProductImage = (req, res, next) => {
     });
 };
 
+const deletePrevImage = async (prevImage) => {
+    try {
+        const filePath = path.join(__dirname, '../uploads', prevImage);
+        await fs.promises.unlink(filePath);
+    } catch (error) {
+        console.log(error);
+    };
+};
+
+const getAllProducts = async (req, res, next) => {
+    try {
+        const products = await Products.find();
+        if (products.length === 0) {
+            res.status(404).json({ message: 'No hay productos registrados' });
+            return next();
+        };
+        res.status(200).json(products);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+        next();
+    };
+};
+
 const createProduct = async (req, res, next) => {
     const product = new Products(req.body);
     try {
@@ -50,7 +73,56 @@ const createProduct = async (req, res, next) => {
     };
 };
 
+const updateProduct = async (req, res, next) => {
+    try {
+        if (!mongoose.isValidObjectId(req.params.id)) {
+            res.status(404).json({ message: 'El ID otorgado no es valido' });
+            return next()
+        };
+        let prevProduct = await Products.findById(req.params.id);
+        let newProduct = req.body;
+        if (req.file) {
+            deletePrevImage(prevProduct.image);
+            newProduct.image = req.file.filename;
+        } else {
+            newProduct.image = prevProduct.image;
+        };
+        let query = await Products.findOneAndUpdate({ _id: req.params.Id }, newProduct, { new: true });
+        if (!query) {
+            res.status(404).json({ message: 'Usuario no encontrado' });
+            return next();
+        };
+        res.status(404).json({ message: 'Producto actualizado correctamente' })
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+        next();
+    };
+};
+
+const deleteProduct = async (req, res, next) => {
+    try {
+        if (!mongoose.isValidObjectId(req.params.id)) {
+            res.status(404).json({ message: 'El ID otorgado no es valido' });
+            return next()
+        };
+
+        const query = await Products.findOneAndDelete({ _id: req.params.id });
+        if (!query) {
+            res.status(404).json({ message: 'Producto no encontrado' });
+            return next();
+        };
+
+        res.status(200).json({ message: 'Producto eliminado con exito' });
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+        next();
+    };
+};
+
 module.exports = {
     uploadProductImage,
-    createProduct
+    getAllProducts,
+    createProduct,
+    updateProduct,
+    deleteProduct
 };

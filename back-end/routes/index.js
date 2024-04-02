@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 const { getAllProductCategories, createProductCategory, updateProductCategory, deleteProductCategory } = require('../controllers/productCategoriesController.js');
-const { uploadProductImage, createProduct } = require('../controllers/productsController.js');
+const { uploadProductImage, getAllProducts, createProduct, updateProduct, deleteProduct } = require('../controllers/productsController.js');
 const { getAllPaymentMethods, createPaymentMethod, updatePaymentMethod, deletePaymentMethod } = require('../controllers/paymentMethodsController.js');
 const { getAllOrderStates, createOrderState, updateOrderState, deleteOrderState } = require('../controllers/orderStatesController.js');
 const { getAllUsers, createUser, updateUser, deleteUser } = require('../controllers/usersController.js');
@@ -15,7 +15,10 @@ router.put('/product-categories/:id', updateProductCategory);
 router.delete('/product-categories/:id', deleteProductCategory);
 
 // Products Endpoints
+router.get('/products', getAllProducts);
 router.post('/products', uploadProductImage, createProduct);
+router.put('/products/:id', uploadProductImage, updateProduct);
+router.delete('/products/:id', deleteProduct);
 
 // Order States Endpoints
 router.get('/order-states', getAllOrderStates);
