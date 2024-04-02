@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
-const Products = require('../models/Products.js');
+const Shops = require('../models/Shops.js');
 
 const multerConfiguration = {
     storage: multer.diskStorage({
@@ -27,10 +27,10 @@ const multerConfiguration = {
 
 const upload = multer(multerConfiguration).single('image');
 
-const uploadProductImage = (req, res, next) => {
+const uploadShopImage = (req, res, next) => {
     upload(req, res, function (error) {
         if (error) {
-            res.json({ message: 'Ocurrio un error al subir la imagen del producto' });
+            res.json({ message: 'Ocurrio un error al subir la imagen de la tienda' });
         };
         return next();
     });
@@ -45,74 +45,76 @@ const deletePrevImage = async (prevImage) => {
     };
 };
 
-const getAllProducts = async (req, res, next) => {
+const getAllShops = async (req, res, next) => {
     try {
-        const products = await Products.find();
-        if (products.length === 0) {
-            res.status(404).json({ message: 'No hay productos registrados' });
+        const shops = await Shops.find();
+        if (shops.length === 0) {
+            res.status(404).json({ message: 'No hay tiendas registradas' });
             return next();
         };
-        res.status(200).json(products);
+        res.status(200).json(shops);
     } catch (error) {
         res.status(404).json({ message: error.message });
         next();
     };
 };
 
-const createProduct = async (req, res, next) => {
-    const product = new Products(req.body);
+const createShop = async (req, res, next) => {
+    console.log('Entro en la funcion')
+    console.log(req.body)
+    const shop = new Shops(req.body);
     try {
         if (req.file.filename) {
-            product.image = req.file.filename;
+            shop.image = req.file.filename;
         };
-        await product.save();
-        res.status(201).json({ message: 'Producto registrado con exito' });
+        await shop.save();
+        res.status(201).json({ message: 'Tienda registrada con exito' });
     } catch (error) {
         res.status(400).json({ message: error.message });
         next();
     };
 };
 
-const updateProduct = async (req, res, next) => {
+const updateShop = async (req, res, next) => {
     try {
         if (!mongoose.isValidObjectId(req.params.id)) {
             res.status(404).json({ message: 'El ID otorgado no es valido' });
             return next()
         };
-        let prevProduct = await Products.findById(req.params.id);
-        let newProduct = req.body;
+        let prevShop = await Shops.findById(req.params.id);
+        let newShop = req.body;
         if (req.file) {
-            deletePrevImage(prevProduct.image);
-            newProduct.image = req.file.filename;
+            deletePrevImage(prevShop.image);
+            newShop.image = req.file.filename;
         } else {
-            newProduct.image = prevProduct.image;
+            newShop.image = prevShop.image;
         };
-        let query = await Products.findOneAndUpdate({ _id: req.params.Id }, newProduct, { new: true });
+        let query = await Shops.findOneAndUpdate({ _id: req.params.Id }, newShop, { new: true });
         if (!query) {
-            res.status(404).json({ message: 'Producto no encontrado' });
+            res.status(404).json({ message: 'Tienda no encontrada' });
             return next();
         };
-        res.status(404).json({ message: 'Producto actualizado correctamente' })
+        res.status(404).json({ message: 'Tienda actualizada correctamente' })
     } catch (error) {
         res.status(400).json({ message: error.message });
         next();
     };
 };
 
-const deleteProduct = async (req, res, next) => {
+const deleteShop = async (req, res, next) => {
     try {
         if (!mongoose.isValidObjectId(req.params.id)) {
             res.status(404).json({ message: 'El ID otorgado no es valido' });
             return next()
         };
 
-        const query = await Products.findOneAndDelete({ _id: req.params.id });
+        const query = await Shops.findOneAndDelete({ _id: req.params.id });
         if (!query) {
-            res.status(404).json({ message: 'Producto no encontrado' });
+            res.status(404).json({ message: 'Tienda no encontrada' });
             return next();
         };
 
-        res.status(200).json({ message: 'Producto eliminado con exito' });
+        res.status(200).json({ message: 'Tienda eliminada con exito' });
     } catch (error) {
         res.status(404).json({ message: error.message });
         next();
@@ -120,9 +122,9 @@ const deleteProduct = async (req, res, next) => {
 };
 
 module.exports = {
-    uploadProductImage,
-    getAllProducts,
-    createProduct,
-    updateProduct,
-    deleteProduct
+    uploadShopImage,
+    getAllShops,
+    createShop,
+    updateShop,
+    deleteShop
 };
