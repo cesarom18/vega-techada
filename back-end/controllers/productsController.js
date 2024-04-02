@@ -1,7 +1,10 @@
-import multer from 'multer';
-import { nanoid } from 'nanoid'
+const mongoose = require('mongoose');
+const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
-import Products from '../models/Products.js';
+const Products = require('../models/Products.js');
 
 const multerConfiguration = {
     storage: multer.diskStorage({
@@ -10,7 +13,7 @@ const multerConfiguration = {
         },
         filename: function (req, file, cb) {
             const extension = file.mimetype.split('/')[1];
-            cb(null, `${nanoid()}.${extension}`);
+            cb(null, `${uuidv4()}.${extension}`);
         }
     }),
     fileFilter: function (req, file, cb) {
@@ -24,7 +27,7 @@ const multerConfiguration = {
 
 const upload = multer(multerConfiguration).single('image');
 
-export const uploadProductImage = (req, res, next) => {
+const uploadProductImage = (req, res, next) => {
     upload(req, res, function (error) {
         if (error) {
             res.json({ message: 'Ocurrio un error al subir la imagen del producto' });
@@ -33,7 +36,7 @@ export const uploadProductImage = (req, res, next) => {
     });
 };
 
-export const createProduct = async (req, res, next) => {
+const createProduct = async (req, res, next) => {
     const product = new Products(req.body);
     try {
         if (req.file.filename) {
@@ -45,4 +48,9 @@ export const createProduct = async (req, res, next) => {
         res.status(400).json({ message: error.message });
         next();
     };
+};
+
+module.exports = {
+    uploadProductImage,
+    createProduct
 };

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PaymentMethodsSchema = new Schema({
@@ -8,4 +8,4 @@ const PaymentMethodsSchema = new Schema({
     }
 }, { timestamps: true });
 
-export default mongoose.model('payment_methods', PaymentMethodsSchema);
+module.exports = mongoose.model('payment_methods', PaymentMethodsSchema);

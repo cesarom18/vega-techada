@@ -1,9 +1,9 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
-import cors from 'cors';
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
-import router from './routes/index.js';
+const router = require('./routes/index.js');
 
 // Connect MongoDB
 mongoose.Promise = global.Promise;

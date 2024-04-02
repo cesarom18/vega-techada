@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-import PaymentMethods from '../models/PaymentMethods.js';
+const PaymentMethods = require('../models/PaymentMethods.js');
 
-export const getAllPaymentMethods = async (req, res, next) => {
+const getAllPaymentMethods = async (req, res, next) => {
     try {
         const paymentMethods = await PaymentMethods.find();
         if (paymentMethods.length === 0) {
@@ -16,7 +16,7 @@ export const getAllPaymentMethods = async (req, res, next) => {
     };
 };
 
-export const createPaymentMethod = async (req, res, next) => {
+const createPaymentMethod = async (req, res, next) => {
     const paymentMethod = new PaymentMethods(req.body);
     try {
         await paymentMethod.save();
@@ -27,7 +27,7 @@ export const createPaymentMethod = async (req, res, next) => {
     };
 };
 
-export const updatePaymentMethod = async (req, res, next) => {
+const updatePaymentMethod = async (req, res, next) => {
     try {
         if (!mongoose.isValidObjectId(req.params.id)) {
             res.status(404).json({ message: 'El ID otorgado no es valido' });
@@ -47,7 +47,7 @@ export const updatePaymentMethod = async (req, res, next) => {
     };
 };
 
-export const deletePaymentMethod = async (req, res, next) => {
+const deletePaymentMethod = async (req, res, next) => {
     try {
         if (!mongoose.isValidObjectId(req.params.id)) {
             res.status(404).json({ message: 'El ID otorgado no es valido' });
@@ -65,4 +65,11 @@ export const deletePaymentMethod = async (req, res, next) => {
         res.status(404).json({ message: error.message });
         next();
     };
+};
+
+module.exports = {
+    getAllPaymentMethods,
+    createPaymentMethod,
+    updatePaymentMethod,
+    deletePaymentMethod
 };

@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-import OrderStates from '../models/OrderStates.js';
+const OrderStates = require('../models/OrderStates.js');
 
-export const getAllOrderStates = async (req, res, next) => {
+const getAllOrderStates = async (req, res, next) => {
     try {
         const orderStates = await OrderStates.find();
         if (orderStates.length === 0) {
@@ -16,7 +16,7 @@ export const getAllOrderStates = async (req, res, next) => {
     };
 };
 
-export const createOrderState = async (req, res, next) => {
+const createOrderState = async (req, res, next) => {
     const orderState = new OrderStates(req.body);
     try {
         await orderState.save();
@@ -27,7 +27,7 @@ export const createOrderState = async (req, res, next) => {
     };
 };
 
-export const updateOrderState = async (req, res, next) => {
+const updateOrderState = async (req, res, next) => {
     try {
         if (!mongoose.isValidObjectId(req.params.id)) {
             res.status(404).json({ message: 'El ID otorgado no es valido' });
@@ -47,7 +47,7 @@ export const updateOrderState = async (req, res, next) => {
     };
 };
 
-export const deleteOrderState = async (req, res, next) => {
+const deleteOrderState = async (req, res, next) => {
     try {
         if (!mongoose.isValidObjectId(req.params.id)) {
             res.status(404).json({ message: 'El ID otorgado no es valido' });
@@ -65,4 +65,11 @@ export const deleteOrderState = async (req, res, next) => {
         res.status(404).json({ message: error.message });
         next();
     };
+};
+
+module.exports = {
+    getAllOrderStates,
+    createOrderState,
+    updateOrderState,
+    deleteOrderState
 };

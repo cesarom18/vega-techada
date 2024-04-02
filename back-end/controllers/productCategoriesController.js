@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-import ProductCategories from '../models/ProductCategories.js';
+const ProductCategories = require('../models/ProductCategories.js');
 
-export const getAllProductCategories = async (req, res, next) => {
+const getAllProductCategories = async (req, res, next) => {
     try {
         const productCategories = await ProductCategories.find();
         if (productCategories.length === 0) {
@@ -16,7 +16,7 @@ export const getAllProductCategories = async (req, res, next) => {
     };
 };
 
-export const createProductCategory = async (req, res, next) => {
+const createProductCategory = async (req, res, next) => {
     const productCategory = new ProductCategories(req.body);
     try {
         await productCategory.save();
@@ -27,7 +27,7 @@ export const createProductCategory = async (req, res, next) => {
     };
 };
 
-export const updateProductCategory = async (req, res, next) => {
+const updateProductCategory = async (req, res, next) => {
     try {
         if (!mongoose.isValidObjectId(req.params.id)) {
             res.status(404).json({ message: 'El ID otorgado no es valido' });
@@ -47,7 +47,7 @@ export const updateProductCategory = async (req, res, next) => {
     };
 };
 
-export const deleteProductCategory = async (req, res, next) => {
+const deleteProductCategory = async (req, res, next) => {
     try {
         if (!mongoose.isValidObjectId(req.params.id)) {
             res.status(404).json({ message: 'El ID otorgado no es valido' });
@@ -65,4 +65,11 @@ export const deleteProductCategory = async (req, res, next) => {
         res.status(404).json({ message: error.message });
         next();
     };
+};
+
+module.exports = {
+    getAllProductCategories,
+    createProductCategory,
+    updateProductCategory,
+    deleteProductCategory
 };

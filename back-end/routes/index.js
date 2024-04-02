@@ -1,11 +1,12 @@
-import express from 'express';
+const express = require('express');
+
 const router = express.Router();
 
-import { getAllProductCategories, createProductCategory, updateProductCategory, deleteProductCategory } from '../controllers/productCategoriesController.js';
-import { uploadProductImage, createProduct } from '../controllers/productsController.js';
-import { getAllOrderStates, createOrderState, updateOrderState, deleteOrderState } from '../controllers/orderStatesController.js';
-import { getAllPaymentMethods, createPaymentMethod, updatePaymentMethod, deletePaymentMethod } from '../controllers/paymentMethodsController.js';
-import { getAllUsers, createUser, updateUser, deleteUser } from '../controllers/usersController.js';
+const { getAllProductCategories, createProductCategory, updateProductCategory, deleteProductCategory } = require('../controllers/productCategoriesController.js');
+const { uploadProductImage, createProduct } = require('../controllers/productsController.js');
+const { getAllPaymentMethods, createPaymentMethod, updatePaymentMethod, deletePaymentMethod } = require('../controllers/paymentMethodsController.js');
+const { getAllOrderStates, createOrderState, updateOrderState, deleteOrderState } = require('../controllers/orderStatesController.js');
+const { getAllUsers, createUser, updateUser, deleteUser } = require('../controllers/usersController.js');
 
 // Product Categories Endpoints
 router.get('/product-categories', getAllProductCategories);
@@ -34,4 +35,4 @@ router.post('/users', createUser);
 router.put('/users/:id', updateUser);
 router.delete('/users/:id', deleteUser);
 
-export default router;
+module.exports = router;

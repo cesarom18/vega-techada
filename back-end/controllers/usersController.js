@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-import Users from '../models/Users.js';
+const Users = require('../models/Users.js');
 
-export const getAllUsers = async (req, res, next) => {
+const getAllUsers = async (req, res, next) => {
     try {
         const users = await Users.find();
         if (users.length === 0) {
@@ -16,7 +16,7 @@ export const getAllUsers = async (req, res, next) => {
     };
 };
 
-export const createUser = async (req, res, next) => {
+const createUser = async (req, res, next) => {
     const user = new Users(req.body);
     try {
         await user.save();
@@ -27,7 +27,7 @@ export const createUser = async (req, res, next) => {
     };
 };
 
-export const updateUser = async (req, res, next) => {
+const updateUser = async (req, res, next) => {
     try {
         if (!mongoose.isValidObjectId(req.params.id)) {
             res.status(404).json({ message: 'El ID otorgado no es valido' });
@@ -47,7 +47,7 @@ export const updateUser = async (req, res, next) => {
     };
 };
 
-export const deleteUser = async (req, res, next) => {
+const deleteUser = async (req, res, next) => {
     try {
         if (!mongoose.isValidObjectId(req.params.id)) {
             res.status(404).json({ message: 'El ID otorgado no es valido' });
@@ -65,4 +65,11 @@ export const deleteUser = async (req, res, next) => {
         res.status(404).json({ message: error.message });
         next();
     };
+};
+
+module.exports = {
+    getAllUsers,
+    createUser,
+    updateUser,
+    deleteUser
 };
