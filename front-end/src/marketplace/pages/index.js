@@ -1,3 +1,4 @@
+export * from './Checkout';
 export * from './Landing';
 export * from './ProductDetail';
 export * from './ShoppingCart';
