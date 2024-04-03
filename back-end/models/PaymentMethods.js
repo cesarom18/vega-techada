@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const PaymentMethodsSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: [true, 'El nombre del método de pago es requerido']
     }
 }, { timestamps: true });
 

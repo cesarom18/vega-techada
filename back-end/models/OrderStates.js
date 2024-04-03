@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const OrderStatesSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: [true, 'El nombre del estado del pedido es requerido']
     }
 });
 
