@@ -66,3 +66,10 @@ const deleteOrder = async (req, res, next) => {
         next();
     };
 };
+
+module.exports = {
+    getAllOrders,
+    createOrder,
+    updateOrder,
+    deleteOrder
+};
