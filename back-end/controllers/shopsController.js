@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
@@ -47,12 +46,12 @@ const deletePrevImage = async (prevImage) => {
 
 const getAllShops = async (req, res, next) => {
     try {
-        const shops = await Shops.find();
-        if (shops.length === 0) {
+        const query = await Shops.find();
+        if (query.length === 0) {
             res.status(404).json({ message: 'No hay tiendas registradas' });
             return next();
         };
-        res.status(200).json(shops);
+        res.status(200).json({ data: query, message: 'Tiendas obtenidas con exito' });
     } catch (error) {
         res.status(404).json({ message: error.message });
         next();
@@ -60,8 +59,6 @@ const getAllShops = async (req, res, next) => {
 };
 
 const createShop = async (req, res, next) => {
-    console.log('Entro en la funcion')
-    console.log(req.body)
     const shop = new Shops(req.body);
     try {
         if (req.file.filename) {
@@ -77,10 +74,6 @@ const createShop = async (req, res, next) => {
 
 const updateShop = async (req, res, next) => {
     try {
-        if (!mongoose.isValidObjectId(req.params.id)) {
-            res.status(404).json({ message: 'El ID otorgado no es valido' });
-            return next()
-        };
         let prevShop = await Shops.findById(req.params.id);
         let newShop = req.body;
         if (req.file) {
@@ -103,17 +96,11 @@ const updateShop = async (req, res, next) => {
 
 const deleteShop = async (req, res, next) => {
     try {
-        if (!mongoose.isValidObjectId(req.params.id)) {
-            res.status(404).json({ message: 'El ID otorgado no es valido' });
-            return next()
-        };
-
         const query = await Shops.findOneAndDelete({ _id: req.params.id });
         if (!query) {
             res.status(404).json({ message: 'Tienda no encontrada' });
             return next();
         };
-
         res.status(200).json({ message: 'Tienda eliminada con exito' });
     } catch (error) {
         res.status(404).json({ message: error.message });

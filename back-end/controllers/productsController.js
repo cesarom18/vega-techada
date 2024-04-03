@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
@@ -47,12 +46,12 @@ const deletePrevImage = async (prevImage) => {
 
 const getAllProducts = async (req, res, next) => {
     try {
-        const products = await Products.find();
-        if (products.length === 0) {
+        const query = await Products.find();
+        if (query.length === 0) {
             res.status(404).json({ message: 'No hay productos registrados' });
             return next();
         };
-        res.status(200).json(products);
+        res.status(200).json({ data: query, message: 'Productos obtenidos con exito' });
     } catch (error) {
         res.status(404).json({ message: error.message });
         next();
@@ -75,10 +74,6 @@ const createProduct = async (req, res, next) => {
 
 const updateProduct = async (req, res, next) => {
     try {
-        if (!mongoose.isValidObjectId(req.params.id)) {
-            res.status(404).json({ message: 'El ID otorgado no es valido' });
-            return next()
-        };
         let prevProduct = await Products.findById(req.params.id);
         let newProduct = req.body;
         if (req.file) {
@@ -101,17 +96,11 @@ const updateProduct = async (req, res, next) => {
 
 const deleteProduct = async (req, res, next) => {
     try {
-        if (!mongoose.isValidObjectId(req.params.id)) {
-            res.status(404).json({ message: 'El ID otorgado no es valido' });
-            return next()
-        };
-
         const query = await Products.findOneAndDelete({ _id: req.params.id });
         if (!query) {
             res.status(404).json({ message: 'Producto no encontrado' });
             return next();
         };
-
         res.status(200).json({ message: 'Producto eliminado con exito' });
     } catch (error) {
         res.status(404).json({ message: error.message });
