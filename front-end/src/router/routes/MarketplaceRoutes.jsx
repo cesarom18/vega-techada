@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { Landing, Stores, StoreDetail, ProductDetail, ShoppingCart, Checkout, MyInformation } from '../../marketplace/pages';
+import { Landing, Stores, StoreDetail, ProductDetail, ShoppingCart, Checkout, MyInformation, MyOrders } from '../../marketplace/pages';
 
 export const MarketplaceRoutes = () => {
     return (
@@ -12,6 +12,7 @@ export const MarketplaceRoutes = () => {
             <Route path='/shopping-cart' element={<ShoppingCart />} />
             <Route path='/checkout' element={<Checkout />} />
             <Route path='/my-information' element={<MyInformation />} />
+            <Route path='/my-orders' element={<MyOrders />} />
         </Routes>
     );
 };
