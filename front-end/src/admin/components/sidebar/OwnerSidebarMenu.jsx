@@ -25,7 +25,7 @@ export const OwnerSidebarMenu = () => {
             </Menu.Item>
             <Menu.Item>
                 <Link
-                    to=''
+                    to='/admin/register-user'
                     className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
                     <TbUserPlus className='text-xl' />
                     <span>Registrar Usuario</span>
@@ -34,7 +34,7 @@ export const OwnerSidebarMenu = () => {
             <Menu.Title className='text-xs text-gray-800 uppercase font-semibold tracking-[2px] my-3 px-0'>Tiendas</Menu.Title>
             <Menu.Item>
                 <Link
-                    to=''
+                    to='/admin/my-stores'
                     className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
                     <TbBuildingStore className='text-xl' />
                     <span>Mis Tiendas</span>
@@ -42,7 +42,7 @@ export const OwnerSidebarMenu = () => {
             </Menu.Item>
             <Menu.Item>
                 <Link
-                    to=''
+                    to='admin/register-store'
                     className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
                     <TbFilePlus className='text-xl' />
                     <span>Registrar Tienda</span>

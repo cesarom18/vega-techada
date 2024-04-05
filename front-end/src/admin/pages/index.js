@@ -1,5 +1,6 @@
 export * from './MyOrders';
 export * from './MyProducts';
+export * from './MyStores';
 export * from './MyUsers';
 export * from './OrderDetail';
 export * from './ProductDetail';
