@@ -7,4 +7,5 @@ export * from './ProductDetail';
 export * from './RegisterProduct';
 export * from './RegisterStore';
 export * from './RegisterUser';
+export * from './StroreDetail';
 export * from './UserDetail';

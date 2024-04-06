@@ -32,7 +32,7 @@ export const MyStoresTableItem = ({ id, name, owner, available }) => {
                 </div>
                 <div>
                     <Link
-                        to=''
+                        to={`/admin/store-detail/${id}`}
                         className='btn btn-md btn-ghost bg-gray-800 hover:bg-gray-700 text-gray-50'>
                         <TbEye className='hidden lg:block' />
                         Ver

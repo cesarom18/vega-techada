@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { MyUsers, RegisterUser, UserDetail, MyProducts, RegisterProduct, ProductDetail, MyOrders, OrderDetail, MyStores, RegisterStore } from '../../admin/pages';
+import { MyUsers, RegisterUser, UserDetail, MyProducts, RegisterProduct, ProductDetail, MyOrders, OrderDetail, MyStores, RegisterStore, StroreDetail } from '../../admin/pages';
 
 export const AdminRoutes = () => {
     return (
@@ -11,6 +11,7 @@ export const AdminRoutes = () => {
             <Route path='/user-detail/:userId' element={<UserDetail />} />
             <Route path='/my-stores' element={<MyStores />} />
             <Route path='/register-store' element={<RegisterStore />} />
+            <Route path='/store-detail/:storeId' element={<StroreDetail />} />
             {/* Store Routes */}
             <Route path='/my-products' element={<MyProducts />} />
             <Route path='/register-product' element={<RegisterProduct />} />
