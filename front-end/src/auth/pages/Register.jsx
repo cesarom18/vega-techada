@@ -1,85 +1,63 @@
 import { Link } from 'react-router-dom';
-import { Input, Checkbox, Button, Link as LinkTailwind } from 'react-daisyui';
+import { Form, Input, Checkbox, Button, Link as LinkTailwind } from 'react-daisyui';
 
 import { AuthLayout } from '../layout/AuthLayout';
 
 export const Register = () => {
     return (
         <AuthLayout title='Crea tu cuenta'>
-            <form className='grid grid-cols-6 gap-6 mt-r'>
+            <Form className='grid grid-cols-6 gap-6 mt-r'>
                 <div className='col-span-6 sm:col-span-3'>
-                    <label
-                        htmlFor='firstName'
-                        className='label block text-sm font-medium text-gray-700'>
-                        Nombre
-                    </label>
+                    <Form.Label
+                        title='Nombre Completo'
+                        htmlFor='fullName' />
                     <Input
                         type='text'
-                        name='firstName'
+                        name='fullName'
                         className='mt-2 w-full'
-                        placeholder='Ingrese tu nombre' />
+                        placeholder='Ingresa tu nombre completo' />
                 </div>
                 <div className='col-span-6 sm:col-span-3'>
-                    <label
-                        htmlFor='lastName'
-                        className='label block text-sm font-medium text-gray-700'>
-                        Apellido
-                    </label>
-                    <Input
-                        type='text'
-                        name='lastName'
-                        className='mt-2 w-full'
-                        placeholder='Ingrese tu apellido' />
-                </div>
-                <div className='col-span-6'>
-                    <label
-                        htmlFor='email'
-                        className='block text-sm font-medium text-gray-700'>
-                        Correo Electronico
-                    </label>
-                    <Input
-                        type='email'
-                        name='email'
-                        className='mt-2 w-full'
-                        placeholder='Ingrese su correo electronico' />
-                </div>
-                <div className='col-span-6'>
-                    <label
-                        htmlFor='rut'
-                        className='block text-sm font-medium text-gray-700'>
-                        RUT
-                    </label>
+                    <Form.Label
+                        title='RUT'
+                        htmlFor='rut' />
                     <Input
                         type='text'
                         name='rut'
                         className='mt-2 w-full'
-                        placeholder='Ingrese su RUT' />
+                        placeholder='Ingresa tu RUT' />
+                </div>
+                <div className='col-span-6'>
+                    <Form.Label
+                        title='Correo Electronico'
+                        htmlFor='email' />
+                    <Input
+                        type='email'
+                        name='email'
+                        className='mt-2 w-full'
+                        placeholder='Ingresa tu correo electronico' />
                 </div>
                 <div className='col-span-6 sm:col-span-3'>
-                    <label
-                        htmlFor='password'
-                        className='block text-sm font-medium text-gray-700'>
-                        Contraseña
-                    </label>
+                    <Form.Label
+                        title='Contraseña'
+                        htmlFor='password' />
                     <Input
                         type='password'
                         name='password'
                         className='mt-2 w-full'
-                        placeholder='Ingrese su contraseña' />
+                        placeholder='Ingresa tu contraseña' />
                 </div>
                 <div className='col-span-6 sm:col-span-3'>
-                    <label
-                        htmlFor='confirmPassword'
-                        className='block text-sm font-medium text-gray-700'>
-                        Confirme Contraseña
-                    </label>
+                    <Form.Label
+                        title='Confirma Contraseña'
+                        htmlFor='confirmPassword' />
                     <Input
                         type='password'
                         name='confirmPassword'
                         className='mt-2 w-full'
-                        placeholder='Confirme su contraseña' />
+                        placeholder='Confirma tu contraseña' />
                 </div>
-                <div className='col-span-6'>
+                <div className='col-span-6 flex gap-2 items-center'>
                     <label
                         htmlFor='rememberMe'
                         className='flex items-center gap-4'>
@@ -94,17 +72,18 @@ export const Register = () => {
                 <div className='col-span-6 flex flex-col items-center gap-4'>
                     <Button
                         color='neutral'
-                        className='text-base w-full'>
+                        size='md'
+                        fullWidth>
                         Crear Cuenta
                     </Button>
-                    <p className='mt-4 text-sm sm:mt-0'>
+                    <p className='text-sm  mt-4 sm:mt-0'>
                         ¿Ya tienes una cuenta?
                         <Link to='/auth/login'>
                             <LinkTailwind className='font-bold'> Inicia Sesion</LinkTailwind>
                         </Link>.
                     </p>
                 </div>
-            </form>
+            </Form>
         </AuthLayout>
     );
 };

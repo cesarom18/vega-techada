@@ -1,62 +1,55 @@
 import { Link } from 'react-router-dom';
-import { Input, Checkbox, Button, Link as LinkTailwind } from 'react-daisyui';
+import { Form, Input, Checkbox, Button, Link as LinkTailwind } from 'react-daisyui';
 
 import { AuthLayout } from '../layout/AuthLayout';
 
 export const Login = () => {
     return (
         <AuthLayout title='Inicia Sesion'>
-            <form className='grid grid-cols-6 gap-6 mt-4'>
+            <Form className='grid grid-cols-6 gap-6 mt-4'>
                 <div className='col-span-6'>
-                    <label
-                        htmlFor='email'
-                        className='label block text-sm font-medium text-gray-700'>
-                        Correo Electronico
-                    </label>
+                    <Form.Label
+                        title='Correo Electronico'
+                        htmlFor='email' />
                     <Input
                         type='email'
                         name='email'
                         className='mt-2 w-full'
-                        placeholder='Ingrese su correo electronico' />
+                        placeholder='Ingresa tu correo electronico' />
                 </div>
                 <div className='col-span-6'>
-                    <label
-                        htmlFor='password'
-                        className='label block text-sm font-medium text-gray-700'>
-                        Contraseña
-                    </label>
+                    <Form.Label
+                        title='Contraseña'
+                        htmlFor='password'/>
                     <Input
                         type='password'
                         name='password'
                         className='mt-2 w-full'
-                        placeholder='Ingrese su contraseña' />
+                        placeholder='Ingresa tu contraseña' />
                 </div>
-                <div className='col-span-6'>
-                    <label
-                        htmlFor='rememberMe'
-                        className='label flex items-center justify-start gap-4'>
-                        <Checkbox
-                            name='rememberMe'
-                            color='neutral' />
-                        <span className='text-sm text-gray-700'>
-                            Recuerdame
-                        </span>
-                    </label>
+                <div className='col-span-6 flex gap-2 items-center'>
+                    <Checkbox
+                        name='rememberMe'
+                        color='neutral' />
+                    <Form.Label
+                        title='Recuerdame'
+                        htmlFor='rememberMe' />
                 </div>
                 <div className='col-span-6 flex flex-col items-center gap-4'>
                     <Button
-                        color='ghost'
-                        className='bg-gray-800 hover:bg-gray-700 text-gray-50 w-full'>
+                        color='neutral'
+                        size='md'
+                        fullWidth>
                         Iniciar Sesion
                     </Button>
-                    <p className='mt-4 text-sm text-gray-700 sm:mt-0'>
+                    <p className='text-sm mt-4 sm:mt-0'>
                         ¿No tienes una cuenta?
                         <Link to='/auth/register'>
                             <LinkTailwind className='font-bold'> Crea una con nosotros</LinkTailwind>
                         </Link>.
                     </p>
                 </div>
-            </form>
+            </Form>
         </AuthLayout>
     );
 };

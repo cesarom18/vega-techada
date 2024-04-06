@@ -5,6 +5,11 @@ export const AuthLayout = ({ children, title }) => {
         <div className='bg-gray-50 min-h-screen' >
             <div className='lg:grid lg:min-h-screen lg:grid-cols-12'>
                 <section className='bg-neutral relative flex items-end lg:col-span-5 lg:h-full xl:col-span-6 h-32'>
+                    <img
+                        alt='Imagen de fondo de la Vega Techada'
+                        src='/img/img-test.jpg'
+                        className='absolute inset-0 h-full w-full object-cover opacity-80'
+                    />
                     <div className='hidden lg:relative lg:block lg:p-12'>
                         <h2 className='text-gray-50 text-2xl font-bold sm:text-3xl md:text-4xl mt-6 '>
                             Bienvenido al sitio oficial de la Vega Techada
@@ -24,8 +29,8 @@ export const AuthLayout = ({ children, title }) => {
                                 Ingresa y visita tus locales favoritos en donde podras realizar pedidos en cada uno de ellos para su posterior retiro en el propio local.
                             </p>
                         </div>
-                        <h2 className='text-xl text-center text-gray-900 font-bold sm:text-3xl md:text-2xl mt-12 lg:mt-0'>{title}</h2>
-                        <Divider className='my-2'/>
+                        <h2 className='text-xl text-center text-gray-800 font-bold uppercase sm:text-3xl md:text-2xl mt-12 lg:mt-0'>{title}</h2>
+                        <Divider className='my-2' />
                         {children}
                     </div>
                 </main>
