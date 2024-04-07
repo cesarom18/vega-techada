@@ -1,81 +1,88 @@
-import { Button, Input, Select, Tooltip } from 'react-daisyui';
+import { Form, Button, Input, Select, Tooltip } from 'react-daisyui';
 import { TbInfoCircle } from 'react-icons/tb';
-
 
 export const UserDetailForm = () => {
     return (
-        <form className='flex flex-col items-center justify-center gap-3 w-full'>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='fullName'
-                    className='label'>
-                    Nombre y Apellido
-                </label>
+        <Form className='flex flex-col items-center justify-center gap-4'>
+            <div className='w-full'>
+                <Form.Label
+                    title='Nombre Completo'
+                    htmlFor='fullName' />
                 <Input
                     type='text'
                     name='fullName'
-                    placeholder='Ingresa el nombre y apellido del usuario' />
+                    className='w-full'
+                    placeholder='Ingresa el nombre completo' />
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='email'
-                    className='label'>
-                    Correo Electronico
-                </label>
+            <div className='w-full'>
+                <Form.Label
+                    title='Correo Electronico'
+                    htmlFor='email' />
                 <Input
                     type='email'
                     name='email'
-                    placeholder='Ingresa el correo electronico del usuario' />
+                    className='w-full'
+                    placeholder='Ingresa el correo electronico' />
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='phone'
-                    className='label'>
-                    Numero Telefonico
-                </label>
+            <div className='w-full'>
+                <Form.Label
+                    title='Contraseña'
+                    htmlFor='password' />
+                <Input
+                    type='password'
+                    name='password'
+                    className='w-full'
+                    placeholder='Ingresa la contraseña' />
+            </div>
+            <div className='w-full'>
+                <Form.Label
+                    title='Numero Telefonico'
+                    htmlFor='phone' />
                 <Input
                     type='text'
                     name='phone'
-                    placeholder='Ingresa el numero telefonico del usuario' />
+                    className='w-full'
+                    placeholder='Ingresa el numero telefonico' />
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='birthDate'
-                    className='label'>
-                    Fecha Nacimiento
-                </label>
+            <div className='w-full'>
+                <Form.Label
+                    title='Fecha De Nacimiento'
+                    htmlFor='birthDate' />
                 <Input
                     type='date'
                     name='birthDate'
-                    placeholder='Ingresa la fecha de nacimiento del usuario' />
+                    className='w-full'
+                    placeholder='Ingresa la fecha de nacimiento' />
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
+            <div className='w-full'>
+                <Form.Label
+                    title='Disponibilidad'
                     htmlFor='userType'
-                    className='flex items-center gap-2 mb-2'>
-                    Tipo Usuario
+                    className='flex items-center justify-start gap-2'>
                     <Tooltip
                         position='right'
                         message='Ten en cuenta que dependiendo del tipo de usuario este tendra acceso a mas o menos funcionalidades. Para mas informacion puedes visitar "Ayuda y Consejos".'
-                        className='text-justify'>
+                        className='text-justify p-2'>
                         <TbInfoCircle />
                     </Tooltip>
-                </label>
+                </Form.Label>
                 <Select
                     name='userType'
+                    className='w-full'
                     defaultValue={0}>
                     <option value={0}>Administrador</option>
                     <option value={1}>Dueño De Local</option>
                     <option value={2}>Comprador</option>
                 </Select>
             </div>
-            <div className='flex items-center justify-center mt-3'>
+            <div className='text-center w-full mt-4'>
                 <Button
-                    color='ghost'
-                    className='bg-gray-800 hover:bg-gray-700 text-gray-50 w-full'>
-                    Registrar
+                    color='neutral'
+                    size='md'
+                    className='w-full lg:w-min'>
+                    Actualizar
                 </Button>
             </div>
-        </form>
+        </Form >
     );
 };

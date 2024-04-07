@@ -17,8 +17,10 @@ export const MyProductTable = ({ products }) => {
             onNextPage={onNextPage}
             placeholder='Ingresa el nombre del producto que desees buscar'>
             <div className='overflow-x-auto'>
-                <Table className='mb-4'>
-                    <Table.Head>
+                <Table
+                    zebra
+                    className='mb-4'>
+                    <Table.Head className='text-gray-800'>
                         <span>ID</span>
                         <span>Nombre</span>
                         <span>Tipo Oferta</span>
@@ -28,7 +30,7 @@ export const MyProductTable = ({ products }) => {
                         <span>¿Visible?</span>
                         <span>Precio</span>
                     </Table.Head>
-                    <Table.Body>
+                    <Table.Body className='text-gray-700'>
                         {
                             onFilteredElements().map((e) => (
                             <MyProductTableItem

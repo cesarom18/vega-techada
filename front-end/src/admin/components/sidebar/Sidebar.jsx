@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import { Menu, Divider, Button } from 'react-daisyui';
-import { TbX, TbSettings, TbHelpCircle } from 'react-icons/tb';
+import { TbX, TbHelpCircle } from 'react-icons/tb';
 
-import { OwnerSidebarMenu } from './OwnerSidebarMenu';
-import { StoreSidebarMenu } from './StoreSidebarMenu';
+import { AdminSidebarMenu } from './AdminSidebarMenu';
+import { ShopSidebarMenu } from './ShopSidebarMenu';
 
-const userType = 0;
+const userType = 1;
 
 export const Sidebar = ({ toggleSidebarVisible }) => {
     return (
@@ -16,39 +17,28 @@ export const Sidebar = ({ toggleSidebarVisible }) => {
                     </div>
                     <Button
                         color='ghost'
-                        shape='circle'
-                        className='lg:hidden hover:bg-gray-800 text-gray-700 hover:text-gray-50 text-2xl '
-                        onClick={toggleSidebarVisible}>
-                        <TbX />
-                    </Button>
+                        shape='square'
+                        startIcon={<TbX />}
+                        className='lg:hidden text-2xl'
+                        onClick={toggleSidebarVisible} />
                 </div>
-                <Divider />
+                <Divider className='my-1'/>
                 {
                     (userType === 0)
-                        ? <OwnerSidebarMenu />
-                        : <StoreSidebarMenu />
+                        ? <AdminSidebarMenu />
+                        : <ShopSidebarMenu />
                 }
             </div>
-            <div>
-                <Menu className='text-gray-800 mt-4 p-0'>
-                    <Menu.Item>
-                        <a
-                            href='#'
-                            className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
-                            <TbSettings className='w-5 h-5' />
-                            Ajustes
-                        </a>
-                    </Menu.Item>
-                    <Menu.Item>
-                        <a
-                            href='#'
-                            className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
-                            <TbHelpCircle className='w-5 h-5' />
-                            Ayuda
-                        </a>
-                    </Menu.Item>
-                </Menu>
-            </div>
+            <Menu className='text-gray-700 p-0'>
+                <Menu.Item>
+                    <Link
+                        to=''
+                        className='flex items-center gap-4 hover:bg-gray-700 hover:text-gray-50 transition-colors rounded-lg p-3'>
+                        <TbHelpCircle className='w-5 h-5' />
+                        Ayuda
+                    </Link>
+                </Menu.Item>
+            </Menu>
         </nav>
     );
 };

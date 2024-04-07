@@ -16,16 +16,16 @@ export const OrderDetailTable = ({ orderProducts }) => {
       onPrevPage={onPrevPage}
       onNextPage={onNextPage}
       placeholder='Ingresa el nombre del producto'>
-      <div className='overflow-x-auto h-full'>
+      <div className='overflow-x-auto'>
         <Table className='mb-4'>
-          <Table.Head>
+          <Table.Head className='text-gray-800'>
             <span>Nombre</span>
             <span>Tipo Oferta</span>
             <span>Categoria</span>
             <span>Disponibilidad</span>
             <span>Precio</span>
           </Table.Head>
-          <Table.Body>
+          <Table.Body className='text-gray-700'>
             {
               onFilteredElements()?.map((e) => (
                 <OrderDetailTableItem

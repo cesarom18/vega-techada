@@ -1,95 +1,88 @@
-import { Input, Textarea, Select, FileInput, Button, Tooltip } from 'react-daisyui';
+import { Form, Input, Textarea, Select, FileInput, Button, Tooltip } from 'react-daisyui';
 import { TbInfoCircle } from 'react-icons/tb'
 
 export const ProductRegistrationForm = () => {
     return (
-        <form className='flex flex-col items-center justify-center gap-3 w-full'>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='name'
-                    className='label'>
-                    Nombre
-                </label>
+        <Form className='flex flex-col items-start justify-center gap-4'>
+            <div className='w-full'>
+                <Form.Label
+                    title='Nombre'
+                    htmlFor='name' />
                 <Input
                     type='text'
                     name='name'
+                    className='w-full'
                     placeholder='Ingresa el nombre del producto' />
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='description'
-                    className='label'>
-                    Descripcion
-                </label>
+            <div className='w-full'>
+                <Form.Label
+                    title='Descripcion'
+                    htmlFor='description' />
                 <Textarea
                     name='description'
                     maxLength={200}
                     rows={4}
-                    className='resize-none'
+                    className='resize-none w-full'
                     placeholder='Ingresa la descripcion del producto' />
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='stock'
-                    className='label'>
-                    Stock
-                </label>
+            <div className='w-full'>
+                <Form.Label
+                    title='Stock'
+                    htmlFor='stock' />
                 <Input
                     type='number'
                     name='stock'
+                    className='w-full'
                     placeholder='Ingresa el stock del producto' />
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='price'
-                    className='label'>
-                    Precio
-                </label>
+            <div className='w-full'>
+                <Form.Label
+                    title='Precio'
+                    htmlFor='price' />
                 <Input
                     type='number'
                     name='price'
+                    className='w-full'
                     placeholder='Ingresa el precio del producto' />
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
+            <div className='w-full'>
+                <Form.Label
+                    title='Disponibilidad'
                     htmlFor='availability'
-                    className='flex items-center gap-2 mb-2'>
-                    ¿Disponible?
+                    className='flex items-center justify-start gap-2'>
                     <Tooltip
                         position='right'
-                        message='La disponibilidad del producto solamente afecta al momento de mostrarlo dentro de su tienda virtual. Por ejemplo si tiene stock de dicho producto pero quiere ocultarlo en la tienda para el cliente seleccione "No" caso contrario seleccione "Si".'
-                        className='text-justify'>
+                        message='La disponibilidad del producto solamente afecta al momento de mostrarlo dentro de su tienda virtual. Por ejemplo, si tiene stock de dicho producto pero quiere ocultarlo en la tienda para el cliente, seleccione "No" y caso contrario seleccione "Si".'
+                        className='text-justify p-2'>
                         <TbInfoCircle />
                     </Tooltip>
-                </label>
+                </Form.Label>
                 <Select
                     name='availability'
-                    defaultValue={false}>
+                    className='w-full'>
                     <option value={true}>Si</option>
                     <option value={true}>No</option>
                 </Select>
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='offerType'
-                    className='label'>
-                    Tipo Oferta
-                </label>
+            <div className='w-full'>
+                <Form.Label
+                    title='Tipo Oferta'
+                    htmlFor='offerType' />
                 <Select
                     name='offerType'
+                    className='w-full'
                     defaultValue={0}>
                     <option value={0}>Producto</option>
                     <option value={1}>Servicio</option>
                 </Select>
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='category'
-                    className='label'>
-                    Categoria
-                </label>
+            <div className='w-full'>
+                <Form.Label
+                    title='Categoria'
+                    htmlFor='category' />
                 <Select
                     name='category'
+                    className='w-full'
                     defaultValue={0}>
                     <option value={0}>Frutas y verduras</option>
                     <option value={1}>Carnes</option>
@@ -104,37 +97,36 @@ export const ProductRegistrationForm = () => {
                     <option value={10}>Confites</option>
                 </Select>
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='unitType'
-                    className='label'>
-                    Unidad De Medida
-                </label>
+            <div className='w-full'>
+                <Form.Label
+                    title='Tipo Unidad'
+                    htmlFor='unitType' />
                 <Select
                     name='unitType'
+                    className='w-full'
                     defaultValue={0}>
                     <option value={0}>Unidades</option>
                     <option value={1}>Kilogramos</option>
                 </Select>
             </div>
-            <div className='flex flex-col form-control w-full'>
-                <label
-                    htmlFor='image'
-                    className='label'>
-                    Imagen Producto
-                </label>
+            <div className='w-full'>
+                <Form.Label
+                    title='Imagen'
+                    htmlFor='image' />
                 <FileInput
                     name='image'
                     bordered
+                    className='w-full'
                     placeholder='Ingresa una imagen para el producto' />
             </div>
-            <div className='flex items-center justify-center mt-3'>
+            <div className='text-center w-full mt-4'>
                 <Button
-                    color='ghost'
-                    className='bg-gray-800 hover:bg-gray-700 text-gray-50 w-full'>
+                    color='neutral'
+                    size='md'
+                    className='w-full lg:w-min'>
                     Registrar
                 </Button>
             </div>
-        </form>
+        </Form>
     );
 };

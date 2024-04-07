@@ -1,24 +1,19 @@
 import { Link } from 'react-router-dom';
 import { Menu } from 'react-daisyui';
-import { TbLayoutDashboard, TbShoppingCart, TbShoppingCartPlus, TbReceipt } from 'react-icons/tb';
+import {
+    TbShoppingCart,
+    TbShoppingCartPlus,
+    TbReceipt
+} from 'react-icons/tb';
 
-export const StoreSidebarMenu = () => {
+export const ShopSidebarMenu = () => {
     return (
         <Menu className='text-gray-700 p-0'>
-            <Menu.Title className='text-xs text-gray-800 uppercase font-semibold tracking-[2px] mb-3 px-0'>Analisis</Menu.Title>
-            <Menu.Item>
-                <Link
-                    to=''
-                    className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
-                    <TbLayoutDashboard className='text-xl' />
-                    <span>Dashboard</span>
-                </Link>
-            </Menu.Item>
             <Menu.Title className='text-xs text-gray-800 uppercase font-semibold tracking-[2px] my-3 px-0'>Productos</Menu.Title>
             <Menu.Item>
                 <Link
                     to='/admin/my-products'
-                    className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
+                    className='flex items-center gap-4 hover:bg-gray-700 hover:text-gray-50 transition-colors rounded-lg p-3'>
                     <TbShoppingCart className='text-xl' />
                     <span>Mis Productos</span>
                 </Link>
@@ -26,7 +21,7 @@ export const StoreSidebarMenu = () => {
             <Menu.Item>
                 <Link
                     to='/admin/register-product'
-                    className='flex items-center gap-4 hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
+                    className='flex items-center gap-4 hover:bg-gray-700 hover:text-gray-50 transition-colors rounded-lg p-3'>
                     <TbShoppingCartPlus className='text-xl' />
                     <span>Registrar Producto</span>
                 </Link>
@@ -35,7 +30,7 @@ export const StoreSidebarMenu = () => {
             <Menu.Item>
                 <Link
                     to='/admin/my-orders'
-                    className='flex items-center gap-4  hover:bg-gray-800 hover:text-gray-50 transition-colors rounded-lg p-3'>
+                    className='flex items-center gap-4  hover:bg-gray-700 hover:text-gray-50 transition-colors rounded-lg p-3'>
                     <TbReceipt className='text-xl' />
                     <span>Mis Pedidos</span>
                 </Link>

@@ -7,21 +7,21 @@ import { stateTypeValues } from '../../../data/variables';
 export const MyOrderTableItem = ({ id, client, orderState, date, total }) => {
     return (
         <Table.Row>
-            <div>{id}</div>
-            <div>{client}</div>
-            <div>{date.toISOString().slice(0, 10)}</div>
-            <div>12:00</div>
-            <div>{stateTypeValues[orderState[orderState?.length - 1]?.stateType]}</div>
-            <div>${total}</div>
-            <div>
+            <span>{id}</span>
+            <span>{client}</span>
+            <span>{date.toISOString().slice(0, 10)}</span>
+            <span>12:00</span>
+            <span>{stateTypeValues[orderState[orderState?.length - 1]?.stateType]}</span>
+            <span>${total}</span>
+            <span>
                 <Link
                     to={`/admin/order-detail/${id}`}
                     className='btn btn-md btn-ghost bg-gray-800 hover:bg-gray-700 text-gray-50'>
                     <TbEye className='hidden lg:block' />
                     Ver
                 </Link>
-            </div>
-            <div>
+            </span>
+            <span>
                 <Button
                     size='md'
                     color='error'
@@ -29,7 +29,7 @@ export const MyOrderTableItem = ({ id, client, orderState, date, total }) => {
                     <TbTrash className='hidden lg:block' />
                     Eliminar
                 </Button>
-            </div>
+            </span>
         </Table.Row>
     );
 };

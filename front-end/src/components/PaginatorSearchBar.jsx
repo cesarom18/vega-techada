@@ -16,17 +16,17 @@ export const PaginatorSearchBar = ({ children, search, currentPage, onSearchBarC
             {children}
             <Pagination className='flex justify-between lg:justify-evenly items-center mt-4'>
                 <Button
-                    color='ghost'
+                    color='neutral'
                     size='md'
-                    className='bg-gray-800 hover:bg-gray-700 text-gray-50 sm:w-40 lg:mt-0'
+                    className='sm:w-40 lg:mt-0'
                     onClick={onPrevPage}>
                     Anterior
                 </Button>
                 <span>{(currentPage / 5) + 1}</span>
                 <Button
-                    color='ghost'
+                    color='neutral'
                     size='md'
-                    className='bg-gray-800 hover:bg-gray-700 text-gray-50 sm:w-40 lg:mt-0'
+                    className='sm:w-40 lg:mt-0'
                     onClick={onNextPage}>
                     Siguiente
                 </Button>

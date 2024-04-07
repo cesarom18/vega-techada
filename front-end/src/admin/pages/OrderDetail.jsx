@@ -34,7 +34,7 @@ export const OrderDetail = () => {
           </Card>
         </div>
         <div className='col-span-12 lg:col-span-2'>
-          <Card className='bg-gray-50'>
+          <Card className='bg-gray-50 h-full'>
             <Card.Body>
               <Card.Title className='mb-2'>Informacion del pedido #{order?.id}</Card.Title>
               <OrderDetailInfo />
@@ -46,7 +46,7 @@ export const OrderDetail = () => {
         <div className='col-span-12'>
           <Card className='bg-gray-50'>
             <Card.Body>
-              <Card.Title className='mb-2'>Linea de estados del pedido</Card.Title>
+              <Card.Title className='mb-2'>Linea de tiempo</Card.Title>
               <OrderDetailTimeline orderState={order?.orderState} />
             </Card.Body>
           </Card>

@@ -14,44 +14,46 @@ export const OrderDetailInfo = () => {
 
     return (
         <>
-            <ul className='flex flex-col text-sm gap-4'>
-                <li className='flex flex-col'>
-                    <span className='font-semibold'>Numero del pedido</span>
-                    <span>12345</span>
-                </li>
-                <li className='flex flex-col'>
-                    <span className='font-semibold'>Nombre del solicitante</span>
-                    <span>Pedro Figueroa</span>
-                </li>
-                <li className='flex flex-col'>
-                    <span className='font-semibold'>Fecha de solicitud</span>
-                    <span>10-03-2024</span>
-                </li>
-                <li className='flex flex-col'>
-                    <span className='font-semibold'>Correo electronico</span>
-                    <span>correo@gmail.com</span>
-                </li>
-                <li className='flex flex-col'>
-                    <span className='font-semibold'>Numero telefonico</span>
-                    <span>+569 12345678</span>
-                </li>
-                <li className='flex flex-col'>
-                    <span className='font-semibold'>Metodo de pago</span>
-                    <span>Metodo ejemplo</span>
-                </li>
-                <li className='flex flex-col'>
-                    <span className='font-semibold'>Comentarios del pedido</span>
-                    <p>Aliqua adipisicing enim voluptate incididunt ad sunt deserunt sint officia. In sunt sit officia et commodo enim adipisicing laboris laboris fugiat ad.</p>
-                </li>
-            </ul>
-            <div className='flex justify-end mt-3'>
-                <Button
-                    size='md'
-                    color='error'
-                    className='text-gray-50'
-                    onClick={onShowModal}>
-                    Cancelar Pedido
-                </Button>
+            <div className='flex flex-col justify-between h-full gap-4'>
+                <ul className='flex flex-col text-gray-700 text-sm gap-4'>
+                    <li className='flex flex-col'>
+                        <span className='text-gray-800 font-semibold'>Numero del pedido</span>
+                        <span>12345</span>
+                    </li>
+                    <li className='flex flex-col'>
+                        <span className='text-gray-800 font-semibold'>Nombre del solicitante</span>
+                        <span>Pedro Figueroa</span>
+                    </li>
+                    <li className='flex flex-col'>
+                        <span className='text-gray-800 font-semibold'>Fecha de solicitud</span>
+                        <span>10-03-2024</span>
+                    </li>
+                    <li className='flex flex-col'>
+                        <span className='text-gray-800 font-semibold'>Correo electronico</span>
+                        <span>correo@gmail.com</span>
+                    </li>
+                    <li className='flex flex-col'>
+                        <span className='text-gray-800 font-semibold'>Numero telefonico</span>
+                        <span>+569 12345678</span>
+                    </li>
+                    <li className='flex flex-col'>
+                        <span className='text-gray-800 font-semibold'>Metodo de pago</span>
+                        <span>Metodo ejemplo</span>
+                    </li>
+                    <li className='flex flex-col'>
+                        <span className='font-semibold'>Comentarios del pedido</span>
+                        <p>Aliqua adipisicing enim voluptate incididunt ad sunt deserunt sint officia. In sunt sit officia et commodo enim adipisicing laboris laboris fugiat ad.</p>
+                    </li>
+                </ul>
+                <div className='text-end'>
+                    <Button
+                        size='md'
+                        color='error'
+                        className='w-full lg:w-min text-gray-50'
+                        onClick={onShowModal}>
+                        Cancelar Pedido
+                    </Button>
+                </div>
             </div>
             <Modal ref={modalRef}>
                 <Modal.Header className='font-semibold mb-3'>¿Quieres cancelar este pedido?</Modal.Header>

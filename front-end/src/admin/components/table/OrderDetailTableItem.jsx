@@ -1,38 +1,30 @@
-import { Table, Button, Badge } from 'react-daisyui';
-import { TbPlus, TbMinus } from 'react-icons/tb';
+import { Table, Badge, Input } from 'react-daisyui';
 
 import { offerTypeValues } from '../../../data';
 
 export const OrderDetailTableItem = ({ name, offerType, category, availability, amount, price }) => {
   return (
     <Table.Row>
-      <div className='font-normal'>{name}</div>
-      <div>{offerTypeValues[offerType]}</div>
-      <div>{category}</div>
-      <div>
+      <span className='font-normal'>{name}</span>
+      <span>{offerTypeValues[offerType]}</span>
+      <span>{category}</span>
+      <span>
         <Badge
           color={(availability) ? 'success' : 'error'}
           size='lg'
           className='text-sm text-gray-50 w-[75%]'>
           {(availability) ? 'Si' : 'No'}
         </Badge>
-      </div>
-      <div>${price}</div>
-      <div className='flex justify-center items-center gap-4'>
-        <Button
-          color='ghost'
-          size='sm'
-          className='bg-gray-800 hover:bg-gray-700 text-gray-50'>
-          <TbMinus />
-        </Button>
-        <span>{amount}</span>
-        <Button
-          color='ghost'
-          size='sm'
-          className='bg-gray-800 hover:bg-gray-700 text-gray-50'>
-          <TbPlus />
-        </Button>
-      </div>
+      </span>
+      <span>${price}</span>
+      <span>
+        <Input
+          type='number'
+          min={1}
+          defaultValue={amount}
+          size='md'
+          className='w-24' />
+      </span>
     </Table.Row>
   );
 };
