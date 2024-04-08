@@ -1,10 +1,12 @@
 import { Button, Input, Pagination } from 'react-daisyui';
 import { TbSearch } from 'react-icons/tb'
 
-export const PaginatorSearchBar = ({ children, search, currentPage, onSearchBarChange, onPrevPage, onNextPage, placeholder }) => {
+export const PaginatorSearchBar = ({ children, hideSearchBar = false, elementsPerPage, search, currentPage, onSearchBarChange, onPrevPage, onNextPage, placeholder }) => {
     return (
         <>
-            <div className='relative mb-4'>
+            <div 
+                hidden={hideSearchBar}
+                className='relative mb-4'>
                 <Input
                     type='text'
                     value={search}
@@ -22,7 +24,7 @@ export const PaginatorSearchBar = ({ children, search, currentPage, onSearchBarC
                     onClick={onPrevPage}>
                     Anterior
                 </Button>
-                <span>{(currentPage / 5) + 1}</span>
+                <span>{(currentPage / elementsPerPage) + 1}</span>
                 <Button
                     color='neutral'
                     size='md'

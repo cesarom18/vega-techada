@@ -3,12 +3,13 @@ import { PaginatorSearchBar } from '../../components/PaginatorSearchBar';
 import { StoreDetailProductItem } from '../components/StoreDetailProductItem';
 
 export const StoreDetailProductList = ({ products }) => {
-    const { search, currentPage, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar({ elements: products, propToSearch: 'name' });
+    const { search, currentPage, elementsPerPage, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar({ elements: products, elementsPerPage: 6 ,propToSearch: 'name' });
 
     return (
         <PaginatorSearchBar
             search={search}
             currentPage={currentPage}
+            elementsPerPage={elementsPerPage}
             onSearchBarChange={onSearchBarChange}
             onFilteredElements={onFilteredElements}
             onPrevPage={onPrevPage}

@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Button, Card } from 'react-daisyui';
+import { Alert, Button, Card } from 'react-daisyui';
 
 import { MarketplaceLayout } from '../layout/MarketplaceLayout';
 import { ShoppingCartTable } from '../components/table';
 import { order } from '../../data';
+import { TbInfoCircle } from 'react-icons/tb';
 
 export const ShoppingCart = () => {
     return (
@@ -15,9 +16,13 @@ export const ShoppingCart = () => {
                     <div className='grid grid-cols-8 gap-4'>
                         <div className='col-span-12 lg:col-span-5'>
                             <Card className='shadow-lg'>
-                                <Card.Body className='p-0'>
+                                <Card.Body className='p-0 pb-6'>
                                     <Card.Title className='bg-gray-800 rounded-t-lg text-gray-50 p-4'>Resumen Compra</Card.Title>
-                                    <ShoppingCartTable products={order.products} />
+                                    {
+                                        (order.length !== 0)
+                                            ? <ShoppingCartTable products={order.products} />
+                                            : <Alert icon={<TbInfoCircle className='text-xl' />}>No hay productos en el carrito</Alert>
+                                    }
                                 </Card.Body>
                             </Card>
                         </div>

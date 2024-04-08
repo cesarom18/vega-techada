@@ -283,59 +283,23 @@ export const order =
             "price": "635.00"
         },
         {
-            "id": 435768,
-            "name": "Bespoke Metal Pizza",
+            "id": 4544,
+            "name": "Licensed Bronze Chair 2",
             "offerType": "Servicio",
-            "category": "Carnes",
-            "amount": 4,
-            "unitType": "UN",
+            "category": "Huevos",
+            "amount": 3,
+            "unitType": "KG",
             "price": "635.00"
         },
         {
-            "id": 43345,
-            "name": "Bespoke Metal Pizza",
-            "offerType": "Servicio",
-            "category": "Carnes",
+            "id": 58,
+            "name": "Elegant Concrete Ball 3",
+            "offerType": "Producto",
+            "category": "Lacteos",
             "amount": 4,
-            "unitType": "UN",
+            "unitType": "KG",
             "price": "635.00"
         },
-        {
-            "id": 4312,
-            "name": "Bespoke Metal Pizza",
-            "offerType": "Servicio",
-            "category": "Carnes",
-            "amount": 4,
-            "unitType": "UN",
-            "price": "635.00"
-        },
-        {
-            "id": 43312,
-            "name": "Bespoke Metal Pizza",
-            "offerType": "Servicio",
-            "category": "Carnes",
-            "amount": 4,
-            "unitType": "UN",
-            "price": "635.00"
-        },
-        {
-            "id": 43123,
-            "name": "Bespoke Metal Pizza",
-            "offerType": "Servicio",
-            "category": "Carnes",
-            "amount": 4,
-            "unitType": "UN",
-            "price": "635.00"
-        },
-        {
-            "id": 490,
-            "name": "Bespoke Metal Pizza",
-            "offerType": "Servicio",
-            "category": "Carnes",
-            "amount": 4,
-            "unitType": "UN",
-            "price": "635.00"
-        }
     ],
     "total": "100.00"
 };
