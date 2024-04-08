@@ -1,4 +1,4 @@
-import defaultImg from '/img/landing-banner.jpg';
+import defaultImg from '/img/img-test.jpg';
 
 export const Banner = ({ bannerTitle, bannerImg = defaultImg }) => {
     return (

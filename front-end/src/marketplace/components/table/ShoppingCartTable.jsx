@@ -5,8 +5,8 @@ import { ShoppingCartTableItem } from './ShoppingCartTableItem';
 export const ShoppingCartTable = ({ products }) => {
     return (
         <div className='overflow-x-auto'>
-            <Table zebra className='border'>
-                <Table.Head className='bg-gray-800 text-gray-50 font-semibold'>
+            <Table zebra>
+                <Table.Head>
                     <span>Producto</span>
                     <span>Precio Unidad</span>
                     <span>Cantidad</span>
@@ -16,9 +16,9 @@ export const ShoppingCartTable = ({ products }) => {
                 <Table.Body className='overflow-y-auto'>
                     {
                         products.map((p) => (
-                            <ShoppingCartTableItem 
+                            <ShoppingCartTableItem
                                 key={p.id}
-                                {...p}/>
+                                {...p} />
                         ))
                     }
                 </Table.Body>

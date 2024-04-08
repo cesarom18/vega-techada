@@ -42,7 +42,7 @@ export const Login = () => {
                         fullWidth>
                         Iniciar Sesion
                     </Button>
-                    <p className='text-sm mt-4 sm:mt-0'>
+                    <p className='text-gray-700 text-sm mt-4 sm:mt-0'>
                         ¿No tienes una cuenta?
                         <Link to='/auth/register'>
                             <LinkTailwind className='font-bold'> Crea una con nosotros</LinkTailwind>

@@ -76,7 +76,7 @@ export const Register = () => {
                         fullWidth>
                         Crear Cuenta
                     </Button>
-                    <p className='text-sm  mt-4 sm:mt-0'>
+                    <p className='text-gray-700 text-sm  mt-4 sm:mt-0'>
                         ¿Ya tienes una cuenta?
                         <Link to='/auth/login'>
                             <LinkTailwind className='font-bold'> Inicia Sesion</LinkTailwind>

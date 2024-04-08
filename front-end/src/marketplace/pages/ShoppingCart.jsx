@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Button } from 'react-daisyui';
+import { Button, Card } from 'react-daisyui';
 
 import { MarketplaceLayout } from '../layout/MarketplaceLayout';
 import { ShoppingCartTable } from '../components/table';
@@ -14,14 +14,17 @@ export const ShoppingCart = () => {
                 <div className='container mx-auto px-8'>
                     <div className='grid grid-cols-8 gap-4'>
                         <div className='col-span-12 lg:col-span-5'>
-                            <ShoppingCartTable products={order.products} />
+                            <Card className='shadow-lg'>
+                                <Card.Body className='p-0'>
+                                    <Card.Title className='bg-gray-800 rounded-t-lg text-gray-50 p-4'>Resumen Compra</Card.Title>
+                                    <ShoppingCartTable products={order.products} />
+                                </Card.Body>
+                            </Card>
                         </div>
                         <div className='col-span-12 lg:col-span-3'>
-                            <div className='h-full'>
-                                <div className='bg-gray-800 text-gray-50 p-2'>
-                                    <span className='font-semibold text-sm'>Resumen de la compra</span>
-                                </div>
-                                <div className='border'>
+                            <Card className='shadow-lg'>
+                                <Card.Body className='p-0'>
+                                    <Card.Title className='bg-gray-800 rounded-t-lg text-gray-50 p-4'>Resumen</Card.Title>
                                     <div className='flex justify-between p-4'>
                                         <span>Total</span>
                                         <span>$ {order.total}</span>
@@ -36,8 +39,8 @@ export const ShoppingCart = () => {
                                             </Button>
                                         </Link>
                                     </div>
-                                </div>
-                            </div>
+                                </Card.Body>
+                            </Card>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import { TbAward, TbHeart, TbRefresh, TbUsers, TbRocket, TbCircleArrowRight, TbB
 export const LandingServices = () => {
   return (
     <>
-      <section className='bg-gray-800 -mt-24 pb-20'>
+      <section className='relative bg-gray-700 -mt-24 pb-32'>
         <div className='container mx-auto px-4'>
           <div className='flex flex-wrap'>
             <div className='text-center w-full md:w-4/12 pt-6 px-4'>
@@ -99,8 +99,19 @@ export const LandingServices = () => {
             </div>
           </div>
         </div>
+        <div className='absolute bottom-0 w-full'>
+          <svg
+            className='w-full '
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 1440 320'>
+            <path
+              fill='#f9fafb'
+              fill-opacity='1'
+              d='M0,256L80,245.3C160,235,320,213,480,213.3C640,213,800,235,960,240C1120,245,1280,235,1360,229.3L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z' />
+          </svg>
+        </div>
       </section>
-      <section className='py-20'>
+      <section className='relative py-36'>
         <div className='container mx-auto px-4'>
           <div className='items-center flex flex-wrap'>
             <div className='w-full md:w-4/12 ml-auto mr-auto px-4'>
@@ -162,8 +173,19 @@ export const LandingServices = () => {
             </div>
           </div>
         </div>
+        <div className='absolute bottom-0 w-full'>
+          <svg
+            className='w-full'
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 0 1440 320'>
+            <path
+              fill='#374151'
+              fill-opacity='1'
+              d='M0,256L80,245.3C160,235,320,213,480,213.3C640,213,800,235,960,240C1120,245,1280,235,1360,229.3L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z' />
+          </svg>
+        </div>
       </section>
-      <section className='bg-gray-800 pt-20'>
+      <section className='bg-gray-700'>
         <div className='container mx-auto px-4'>
           <div className='flex flex-wrap text-center justify-center'>
             <div className='w-full lg:w-6/12 px-4'>
@@ -207,6 +229,5 @@ export const LandingServices = () => {
         </div>
       </section>
     </>
-
   );
 };

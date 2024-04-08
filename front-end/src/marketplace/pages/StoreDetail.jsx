@@ -1,12 +1,29 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Button, Divider } from 'react-daisyui';
-import { TbFilter } from 'react-icons/tb';
 
 import { MarketplaceLayout } from '../layout/MarketplaceLayout';
-import { FilterItem } from '../components/FilterItem';
+import { FilterList } from '../components/filter';
 import { StoreDetailProductList } from '../components/StoreDetailProductList';
 import { stores, products } from '../../data';
+
+const storesFilters = [
+    {
+        name: 'Ejemplo1',
+        options: [
+            'Opcion1',
+            'Opcion2',
+            'Opcion3'
+        ]
+    },
+    {
+        name: 'Ejemplo2',
+        options: [
+            'Opcion1',
+            'Opcion2',
+            'Opcion3'
+        ]
+    },
+];
 
 export const StoreDetail = () => {
     const [store, setStore] = useState({});
@@ -26,24 +43,7 @@ export const StoreDetail = () => {
                 <div className='container mx-auto px-8'>
                     <div className='grid grid-cols-5'>
                         <div className='col-span-12 lg:col-span-1 mb-8 lg:mb-0 lg:pr-8'>
-                            <div className='flex justify-between items-center'>
-                                <span className='text-lg uppercase font-semibold'>Filtros</span>
-                                <span className='underline cursor-pointer'>Borrar Filtros</span>
-                            </div>
-                            <Divider className='my-2' />
-                            <Button
-                                size='md'
-                                color='neutral'
-                                fullWidth
-                                endIcon={<TbFilter />}
-                                className='my-2'>
-                                Filtrar
-                            </Button>
-                            <div>
-                                <FilterItem
-                                    title='Categorias'
-                                    elements={store.productCategories} />
-                            </div>
+                            <FilterList filters={storesFilters}/>
                         </div>
                         <div className='col-span-12 lg:col-span-4'>
                             {
