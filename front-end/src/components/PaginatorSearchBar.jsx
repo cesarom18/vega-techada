@@ -1,7 +1,7 @@
 import { Button, Input, Pagination } from 'react-daisyui';
 import { TbSearch } from 'react-icons/tb'
 
-export const PaginatorSearchBar = ({ children, hideSearchBar = false, elementsPerPage, search, currentPage, onSearchBarChange, onPrevPage, onNextPage, placeholder }) => {
+export const PaginatorSearchBar = ({ children, hideSearchBar = false, elementsPerPage = 5, search, currentPage, onSearchBarChange, onPrevPage, onNextPage, placeholder }) => {
     return (
         <>
             <div 
