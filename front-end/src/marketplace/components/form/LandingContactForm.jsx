@@ -4,7 +4,7 @@ import { WaveSvg } from '../svg';
 
 export const LandingContactForm = () => {
     return (
-        <section className='relative bg-gray-700 flex justify-center px-4 pt-12 pb-52'>
+        <section className='relative bg-gray-700 flex justify-center px-4 pb-52'>
             <Card className='bg-gray-50 text-gray-700 w-full md:w-[60%]'>
                 <Card.Body>
                     <Card.Title className='text-gray-800 mb-2'>¿Quieres consultarnos algo?</Card.Title>
