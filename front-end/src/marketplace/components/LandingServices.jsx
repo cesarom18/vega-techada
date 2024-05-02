@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { TbAward, TbHeart, TbRefresh, TbUsers, TbRocket, TbCircleArrowRight, TbBox, TbChartBar } from 'react-icons/tb';
 
+import { WaveSvg } from '../components/svg';
+
 export const LandingServices = () => {
   return (
     <>
-      <section className='relative bg-gray-700 -mt-24 pb-32'>
+      <section className='relative bg-gray-700 py-32'>
         <div className='container mx-auto px-4'>
           <div className='flex flex-wrap'>
             <div className='text-center w-full md:w-4/12 pt-6 px-4'>
@@ -80,7 +82,7 @@ export const LandingServices = () => {
               </Link>
             </div>
             <div className='w-full md:w-4/12 px-4 mr-auto ml-auto'>
-              <div className='relative bg-pink-50 flex flex-col break-words shadow-lg rounded-lg w-full min-w-0 mb-6 '>
+              <div className='relative bg-gray-50 flex flex-col break-words shadow-lg rounded-lg w-full min-w-0 mb-6 '>
                 <img
                   alt='...'
                   src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1051&amp;q=80'
@@ -99,19 +101,11 @@ export const LandingServices = () => {
             </div>
           </div>
         </div>
-        <div className='absolute bottom-0 w-full'>
-          <svg
-            className='w-full '
-            xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 1440 320'>
-            <path
-              fill='#f9fafb'
-              fill-opacity='1'
-              d='M0,256L80,245.3C160,235,320,213,480,213.3C640,213,800,235,960,240C1120,245,1280,235,1360,229.3L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z' />
-          </svg>
-        </div>
+        <WaveSvg
+          color='#f9fafb'
+          bottomPx={0} />
       </section>
-      <section className='relative py-36'>
+      <section className='relative py-32'>
         <div className='container mx-auto px-4'>
           <div className='items-center flex flex-wrap'>
             <div className='w-full md:w-4/12 ml-auto mr-auto px-4'>
@@ -173,19 +167,9 @@ export const LandingServices = () => {
             </div>
           </div>
         </div>
-        <div className='absolute bottom-0 w-full'>
-          <svg
-            className='w-full'
-            xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 1440 320'>
-            <path
-              fill='#374151'
-              fill-opacity='1'
-              d='M0,256L80,245.3C160,235,320,213,480,213.3C640,213,800,235,960,240C1120,245,1280,235,1360,229.3L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z' />
-          </svg>
-        </div>
+        <WaveSvg bottomPx={-30}/>
       </section>
-      <section className='bg-gray-700'>
+      <section className='bg-gray-700 py-32'>
         <div className='container mx-auto px-4'>
           <div className='flex flex-wrap text-center justify-center'>
             <div className='w-full lg:w-6/12 px-4'>
