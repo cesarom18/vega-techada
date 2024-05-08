@@ -1,7 +1,7 @@
-import { Card, Divider, Badge, Button } from 'react-daisyui';
+import { Card, Divider, Button } from 'react-daisyui';
 import { Link } from 'react-router-dom';
 
-export const StoreDetailProductItem = ({ id, name, offerType, image, unitType, availability, price }) => {
+export const StoreDetailProductItem = ({ id, name, offerType, category, image, unitType, availability, price }) => {
     return (
         <Card
             bordered
@@ -10,12 +10,6 @@ export const StoreDetailProductItem = ({ id, name, offerType, image, unitType, a
                 <Card.Image
                     src={image}
                     className='rounded-lg image-full' />
-                <Badge
-                    color={(availability) ? 'success' : 'error'}
-                    size='md'
-                    className='absolute top-2 right-2 rounded-lg font-semibold uppercase text-gray-50 p-3'>
-                    {(availability) ? 'Disponible' : 'No Disponible'}
-                </Badge>
             </div>
             <Card.Body className='text-sm text-gray-700 p-0'>
                 <Card.Title className='text-sm text-gray-800 uppercase'>{name}</Card.Title>
@@ -23,6 +17,10 @@ export const StoreDetailProductItem = ({ id, name, offerType, image, unitType, a
                 <div className='mb-2'>
                     <span className='text-gray-800 font-semibold'>Tipo Oferta</span>
                     <p className='m-0'>{offerType}</p>
+                </div>
+                <div className='mb-2'>
+                    <span className='text-gray-800 font-semibold'>Categoria</span>
+                    <p className='m-0'>{category}</p>
                 </div>
                 <div className='mb-2'>
                     <span className='text-gray-800 font-semibold'>Tipo Unidad Medida</span>

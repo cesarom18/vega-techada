@@ -5,8 +5,8 @@ export const stores = [
         "owner": "Ashly",
         "description": "Descripcion ejemplo",
         "productCategories": [
-            "Huevos",
-            "Lacteos"
+            "Frutas y verduras",
+            "Carnes"
         ],
         "image": "https://picsum.photos/seed/0804wHxee/640/480",
         "available": true
@@ -17,8 +17,7 @@ export const stores = [
         "owner": "Jackson",
         "description": "Descripcion ejemplo",
         "productCategories": [
-            "Lacteos",
-            "Carnes"
+            "Pescados y Mariscos"
         ],
         "image": "https://picsum.photos/seed/occmRDe/640/480",
         "available": true
@@ -29,8 +28,7 @@ export const stores = [
         "owner": "Eusebio",
         "description": "Descripcion ejemplo",
         "productCategories": [
-            "Carnes",
-            "Huevos"
+            "Pescados y Mariscos"
         ],
         "image": "https://loremflickr.com/640/480?lock=8277128671920128",
         "available": true
@@ -41,8 +39,8 @@ export const stores = [
         "owner": "Ardith",
         "description": "Descripcion ejemplo",
         "productCategories": [
-            "Huevos",
-            "Carnes"
+            "Abarrotes",
+            "Ropa"
         ],
         "image": "https://loremflickr.com/640/480?lock=1967843952295936",
         "available": true
@@ -53,8 +51,8 @@ export const stores = [
         "owner": "Roosevelt",
         "description": "Descripcion ejemplo",
         "productCategories": [
-            "Carnes",
-            "Lacteos"
+            "Abarrotes",
+            "Ropa"
         ],
         "image": "https://loremflickr.com/640/480?lock=1299624648245248",
         "available": true
@@ -65,8 +63,7 @@ export const stores = [
         "owner": "Kira",
         "description": "Descripcion ejemplo",
         "productCategories": [
-            "Huevos",
-            "Lacteos"
+            "Artesanias"
         ],
         "image": "https://picsum.photos/seed/UZ9jO9CI/640/480",
         "available": false
@@ -77,8 +74,7 @@ export const stores = [
         "owner": "Maye",
         "description": "Descripcion ejemplo",
         "productCategories": [
-            "Lacteos",
-            "Huevos"
+            "Artesanias"
         ],
         "image": "https://loremflickr.com/640/480?lock=5683004393390080",
         "available": true
@@ -89,8 +85,7 @@ export const stores = [
         "owner": "Margie",
         "description": "Descripcion ejemplo",
         "productCategories": [
-            "Lacteos",
-            "Lacteos"
+            "Artesanias"
         ],
         "image": "https://picsum.photos/seed/fa959yZ/640/480",
         "available": false
@@ -101,8 +96,7 @@ export const stores = [
         "owner": "Ricky",
         "description": "Descripcion ejemplo",
         "productCategories": [
-            "Carnes",
-            "Carnes"
+            "Recuerdos"
         ],
         "image": "https://loremflickr.com/640/480?lock=553345360068608",
         "available": false
@@ -113,8 +107,7 @@ export const stores = [
         "owner": "Cassie",
         "description": "Descripcion ejemplo",
         "productCategories": [
-            "Carnes",
-            "Huevos"
+            "Recuerdos"
         ],
         "image": "https://loremflickr.com/640/480?lock=4250377631301632",
         "available": true
@@ -148,7 +141,7 @@ export const products = [
         "id": 87,
         "name": "Incredible Steel Shirt",
         "offerType": "Servicio",
-        "category": "Huevos",
+        "category": "Carnes",
         "image": "https://loremflickr.com/640/480?lock=4034762962370560",
         "unitType": "UN",
         "stock": 1,
@@ -170,7 +163,7 @@ export const products = [
         "id": 69,
         "name": "Licensed Fresh Bacon",
         "offerType": "Producto",
-        "category": "Huevos",
+        "category": "Frutas y Verduras",
         "image": "https://picsum.photos/seed/T1GLZmaG2K/640/480",
         "unitType": "UN",
         "stock": 9,
@@ -181,7 +174,7 @@ export const products = [
         "id": 80,
         "name": "Handmade Soft Gloves",
         "offerType": "Producto",
-        "category": "Lacteos",
+        "category": "Frutas y Verduras",
         "image": "https://picsum.photos/seed/mjEOFFwds/640/480",
         "unitType": "KG",
         "stock": 7,
@@ -192,7 +185,7 @@ export const products = [
         "id": 42,
         "name": "Rustic Fresh Fish",
         "offerType": "Producto",
-        "category": "Carnes",
+        "category": "Frutas y Verduras",
         "image": "https://picsum.photos/seed/tCiY5w2ni/640/480",
         "unitType": "KG",
         "stock": 9,
@@ -203,7 +196,7 @@ export const products = [
         "id": 56,
         "name": "Electronic Concrete Computer",
         "offerType": "Producto",
-        "category": "Lacteos",
+        "category": "Pescados y Mariscos",
         "image": "https://loremflickr.com/640/480?lock=7035227958411264",
         "unitType": "UN",
         "stock": 1,
@@ -214,7 +207,7 @@ export const products = [
         "id": 17,
         "name": "Oriental Fresh Sausages",
         "offerType": "Producto",
-        "category": "Huevos",
+        "category": "Pescados y Mariscos",
         "image": "https://picsum.photos/seed/6yahvW/640/480",
         "unitType": "UN",
         "stock": 6,
@@ -225,7 +218,7 @@ export const products = [
         "id": 98,
         "name": "Licensed Wooden Car",
         "offerType": "Producto",
-        "category": "Huevos",
+        "category": "Pescados y Mariscos",
         "image": "https://picsum.photos/seed/kbozdyILZ/640/480",
         "unitType": "UN",
         "stock": 10,

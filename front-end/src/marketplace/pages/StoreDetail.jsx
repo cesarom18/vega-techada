@@ -1,37 +1,40 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Alert } from 'react-daisyui';
+import { TbInfoCircle } from 'react-icons/tb';
 
 import { MarketplaceLayout } from '../layout/MarketplaceLayout';
 import { FilterList } from '../components/filter';
 import { StoreDetailProductList } from '../components/StoreDetailProductList';
-import { stores, products } from '../../data';
+import { stores, products as productsTest } from '../../data';
 
 const storesFilters = [
     {
-        name: 'Ejemplo1',
+        name: 'Categorias',
         options: [
-            'Opcion1',
-            'Opcion2',
-            'Opcion3'
+            'Frutas y Verduras',
+            'Carnes',
+            'Pescados y Mariscos',
+            'Abarrotes',
+            'Bebestibles',
+            'Ropa',
+            'Artesanias',
+            'Recuerdos',
+            'Almuerzos'
         ]
-    },
-    {
-        name: 'Ejemplo2',
-        options: [
-            'Opcion1',
-            'Opcion2',
-            'Opcion3'
-        ]
-    },
+    }
 ];
 
 export const StoreDetail = () => {
     const [store, setStore] = useState({});
+    const [initialProducts] = useState(productsTest);
+    const [products, setProducts] = useState([]);
 
     const { storeId } = useParams();
 
     useEffect(() => {
         setStore((prevState) => stores.find((s) => s.id == storeId));
+        setProducts(initialProducts);
     }, []);
 
     return (
@@ -43,7 +46,11 @@ export const StoreDetail = () => {
                 <div className='container mx-auto px-8'>
                     <div className='grid grid-cols-5'>
                         <div className='col-span-12 lg:col-span-1 mb-8 lg:mb-0 lg:pr-8'>
-                            <FilterList filters={storesFilters}/>
+                            <FilterList 
+                                filters={storesFilters}
+                                initialElements={initialProducts}
+                                elements={products}
+                                setElements={setProducts}/>
                         </div>
                         <div className='col-span-12 lg:col-span-4'>
                             {
