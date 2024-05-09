@@ -5,7 +5,7 @@ import { Banner } from '../components/banner'
 import { Footer } from '../components/Footer';
 
 
-export const MarketplaceLayout = ({ children, showBanner = false, bannerTitle, bannerImg }) => {
+export const MarketplaceLayout = ({ children, showBanner = false, bannerTitle, bannerImg, footerTheme = 'light' }) => {
     const [navbarVisible, setNavbarVisible] = useState(false);
 
     const toggleNavbarVisible = useCallback(() => {
@@ -22,7 +22,7 @@ export const MarketplaceLayout = ({ children, showBanner = false, bannerTitle, b
             <main>
                 {children}
             </main>
-            <Footer />
+            <Footer theme={footerTheme} />
         </div>
     );
 };

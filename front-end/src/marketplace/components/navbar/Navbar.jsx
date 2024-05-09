@@ -20,14 +20,14 @@ export const Navbar = ({ toggleNavbarVisible }) => {
                         <Menu.Item>
                             <Link
                                 to='/marketplace'
-                                className='uppercase font-bold'>
+                                className='uppercase font-semibold'>
                                 Inicio
                             </Link>
                         </Menu.Item>
                         <Menu.Item>
                             <Link
                                 to='/marketplace/stores'
-                                className='uppercase font-bold'>
+                                className='uppercase font-semibold'>
                                 Tiendas
                             </Link>
                         </Menu.Item>

@@ -20,14 +20,14 @@ export const NavbarResponsive = ({ toggleNavbarVisible }) => {
             <Menu.Item>
                 <Link
                     to='/marketplace'
-                    className='hover:bg-gray-700 hover:text-gray-50 justify-center py-4'>
+                    className='hover:bg-gray-700 hover:text-gray-50 uppercase font-semibold justify-center py-4'>
                     Inicio
                 </Link>
             </Menu.Item>
             <Menu.Item>
                 <Link
                     to='/marketplace/stores'
-                    className='hover:bg-gray-700 hover:text-gray-50 justify-center py-4'>
+                    className='hover:bg-gray-700 hover:text-gray-50 uppercase font-semibold justify-center py-4'>
                     Tiendas
                 </Link>
             </Menu.Item>

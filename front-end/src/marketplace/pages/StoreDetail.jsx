@@ -41,7 +41,8 @@ export const StoreDetail = () => {
         <MarketplaceLayout
             showBanner
             bannerTitle={store.name}
-            bannerImg={store.image}>
+            bannerImg={store.image}
+            footerTheme='dark'>
             <section className='py-20'>
                 <div className='container mx-auto px-8'>
                     <div className='grid grid-cols-5'>

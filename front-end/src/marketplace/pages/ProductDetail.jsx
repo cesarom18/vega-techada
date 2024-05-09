@@ -18,7 +18,8 @@ export const ProductDetail = () => {
     return (
         <MarketplaceLayout
             showBanner
-            bannerTitle='Detalle De Producto'>
+            bannerTitle='Detalle De Producto'
+            footerTheme='dark'>
             <section className='py-20'>
                 <div className='container mx-auto px-8'>
                     <div className='grid grid-cols-12 gap-4'>
