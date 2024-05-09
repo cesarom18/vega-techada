@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Badge, Card, Divider, Button, Input } from 'react-daisyui'
-import { TbShoppingCart } from 'react-icons/tb';
+import { Badge, Card, Divider } from 'react-daisyui';
 
-import { MarketplaceLayout } from '../layout/MarketplaceLayout'
+import { MarketplaceLayout } from '../layout/MarketplaceLayout';
 import { products } from '../../data';
 
 export const ProductDetail = () => {
@@ -31,7 +30,7 @@ export const ProductDetail = () => {
                         <div className='col-span-12 lg:col-span-7'>
                             <Card
                                 bordered
-                                className='rounded-lg shadow-sm p-4'>
+                                className='rounded-lg shadow-sm p-4 h-full'>
                                 <Card.Body className='text-gray-700 text-sm p-0'>
                                     <Card.Title className='flex items-center justify-between text-xl font-semibold uppercase'>
                                         <span className='text-gray-800'>{product.name}</span>
@@ -47,15 +46,6 @@ export const ProductDetail = () => {
                                         <span className='text-lg text-gray-800 font-semibold'>Categoria</span>
                                         <p className='m-0'>{product.category}</p>
                                     </div>
-                                    <div className='flex flex-col mb-2'>
-                                        <span className='text-lg text-gray-800 font-semibold'>Disponibilidad</span>
-                                        <Badge
-                                            color={(product.availability) ? 'success' : 'error'}
-                                            size='md'
-                                            className='rounded-lg font-semibold uppercase text-gray-50 p-3'>
-                                            {(product.availability) ? 'Disponible' : 'No Disponible'}
-                                        </Badge>
-                                    </div>
                                     <div className='mb-2'>
                                         <span className='text-lg text-gray-800 font-semibold'>Tipo Oferta</span>
                                         <p className='text-sm m-0'>{product.offerType}</p>
@@ -63,22 +53,6 @@ export const ProductDetail = () => {
                                     <div className='mb-2'>
                                         <span className='text-lg text-gray-800 font-semibold'>Tipo Unidad</span>
                                         <p className='text-sm m-0'>{product.unitType}</p>
-                                    </div>
-                                    <div className='mb-2'>
-                                        <Input
-                                            type='number'
-                                            value={1}
-                                            size='md'
-                                            className='w-24' />
-                                    </div>
-                                    <div className='mb-2'>
-                                        <Button
-                                            color='neutral'
-                                            size='md'
-                                            disabled={!product.availability}
-                                            startIcon={<TbShoppingCart />}>
-                                            Agregar Al Carrito
-                                        </Button>
                                     </div>
                                 </Card.Body>
                             </Card>

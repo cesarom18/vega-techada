@@ -167,9 +167,9 @@ export const LandingServices = () => {
             </div>
           </div>
         </div>
-        <WaveSvg bottomPx={-30}/>
+        <WaveSvg bottomPx={-30} />
       </section>
-      <section className='bg-gray-700 py-32'>
+      <section className='relative bg-gray-700 py-32'>
         <div className='container mx-auto px-4'>
           <div className='flex flex-wrap text-center justify-center'>
             <div className='w-full lg:w-6/12 px-4'>
