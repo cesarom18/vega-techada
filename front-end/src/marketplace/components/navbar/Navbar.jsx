@@ -26,6 +26,13 @@ export const Navbar = ({ toggleNavbarVisible }) => {
                         </Menu.Item>
                         <Menu.Item>
                             <Link
+                                to='/marketplace/about-us'
+                                className='uppercase font-semibold'>
+                                Nosotros
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item>
+                            <Link
                                 to='/marketplace/stores'
                                 className='uppercase font-semibold'>
                                 Tiendas

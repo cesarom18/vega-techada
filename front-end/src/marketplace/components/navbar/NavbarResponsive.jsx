@@ -26,6 +26,13 @@ export const NavbarResponsive = ({ toggleNavbarVisible }) => {
             </Menu.Item>
             <Menu.Item>
                 <Link
+                    to='/marketplace/about-us'
+                    className='hover:bg-gray-700 hover:text-gray-50 uppercase font-semibold justify-center py-4'>
+                    Nosotros
+                </Link>
+            </Menu.Item>
+            <Menu.Item>
+                <Link
                     to='/marketplace/stores'
                     className='hover:bg-gray-700 hover:text-gray-50 uppercase font-semibold justify-center py-4'>
                     Tiendas

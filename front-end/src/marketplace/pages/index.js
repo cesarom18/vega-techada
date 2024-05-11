@@ -1,3 +1,4 @@
+export * from './AboutUs';
 export * from './Landing';
 export * from './ProductDetail';
 export * from './StoreDetail';
