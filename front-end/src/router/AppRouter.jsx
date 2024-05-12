@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { MarketplaceRoutes } from './routes';
-import { Error } from '../error/pages';
+import { Error } from '../pages';
 
 export const AppRouter = () => {
   return (

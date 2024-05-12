@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Badge, Card, Divider } from 'react-daisyui';
 
 import { MarketplaceLayout } from '../layout/MarketplaceLayout';
-import { products } from '../../data';
+import { products } from '../data';
 
 export const ProductDetail = () => {
     const [product, setProduct] = useState({});

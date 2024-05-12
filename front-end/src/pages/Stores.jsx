@@ -4,7 +4,7 @@ import { TbInfoCircle } from 'react-icons/tb';
 
 import { MarketplaceLayout } from '../layout/MarketplaceLayout';
 import { StoresList } from '../components/StoresList';
-import { stores as storesTest } from '../../data';
+import { stores as storesTest } from '../data';
 
 export const Stores = () => {
     const [stores, setStores] = useState([]);

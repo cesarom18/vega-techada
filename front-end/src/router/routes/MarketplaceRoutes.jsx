@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { Landing, Stores, StoreDetail, ProductDetail, AboutUs } from '../../marketplace/pages';
+import { Landing, Stores, StoreDetail, ProductDetail, AboutUs } from '../../pages';
 
 export const MarketplaceRoutes = () => {
     return (

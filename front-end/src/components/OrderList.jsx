@@ -1,5 +1,5 @@
-import { usePaginatorSearchBar } from '../../hooks';
-import { PaginatorSearchBar } from '../../components/PaginatorSearchBar';
+import { usePaginatorSearchBar } from '../hooks';
+import { PaginatorSearchBar } from './PaginatorSearchBar';
 import { OrderItem } from './OrderItem';
 
 export const OrderList = ({ orders }) => {

@@ -1,8 +1,8 @@
 import { Table } from 'react-daisyui';
 
-import { usePaginatorSearchBar } from '../../../hooks';
+import { usePaginatorSearchBar } from '../../hooks';
 import { ShoppingCartTableItem } from './ShoppingCartTableItem';
-import { PaginatorSearchBar } from '../../../components';
+import { PaginatorSearchBar } from '..';
 
 export const ShoppingCartTable = ({ products }) => {
     const { search, currentPage, onSearchBarChange, onFilteredElements, onPrevPage, onNextPage } = usePaginatorSearchBar({ elements: products, propToSearch: 'name' });

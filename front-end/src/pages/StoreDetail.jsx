@@ -6,7 +6,7 @@ import { TbInfoCircle } from 'react-icons/tb';
 import { MarketplaceLayout } from '../layout/MarketplaceLayout';
 import { FilterList } from '../components/filter';
 import { StoreDetailProductList } from '../components/StoreDetailProductList';
-import { stores, products as productsTest } from '../../data';
+import { stores, products as productsTest } from '../data';
 
 const storesFilters = [
     {
