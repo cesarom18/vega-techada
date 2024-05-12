@@ -101,9 +101,6 @@ export const LandingServices = () => {
             </div>
           </div>
         </div>
-        <WaveSvg
-          color='#f9fafb'
-          bottomPx={0} />
       </section>
       <section className='relative py-32'>
         <div className='container mx-auto px-4'>
@@ -167,7 +164,6 @@ export const LandingServices = () => {
             </div>
           </div>
         </div>
-        <WaveSvg bottomPx={-30} />
       </section>
       <section className='relative bg-gray-700 py-32'>
         <div className='container mx-auto px-4'>
